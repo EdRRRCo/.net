@@ -31,9 +31,11 @@ namespace SMS
             temp.Show();
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
+        private void MenuItem32_Click(object sender, EventArgs e)
         {
-
+            FormSC temp = new FormSC();//实例化
+            temp.MdiParent = this;//设置父窗体
+            temp.Show();//调用方法Show把窗体展示到界面
         }
     }
 }

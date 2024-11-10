@@ -63,7 +63,7 @@ namespace SMS
             this.panelStuSer.Location = new System.Drawing.Point(0, 0);
             this.panelStuSer.Margin = new System.Windows.Forms.Padding(4);
             this.panelStuSer.Name = "panelStuSer";
-            this.panelStuSer.Size = new System.Drawing.Size(1004, 95);
+            this.panelStuSer.Size = new System.Drawing.Size(1036, 95);
             this.panelStuSer.TabIndex = 0;
             // 
             // buttonQueryStu
@@ -115,6 +115,7 @@ namespace SMS
             // 
             // dataGridViewStu
             // 
+            this.dataGridViewStu.AllowUserToAddRows = false;
             this.dataGridViewStu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SNO,
@@ -129,10 +130,11 @@ namespace SMS
             this.dataGridViewStu.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewStu.MultiSelect = false;
             this.dataGridViewStu.Name = "dataGridViewStu";
+            this.dataGridViewStu.ReadOnly = true;
             this.dataGridViewStu.RowHeadersWidth = 51;
             this.dataGridViewStu.RowTemplate.Height = 23;
             this.dataGridViewStu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStu.Size = new System.Drawing.Size(1004, 405);
+            this.dataGridViewStu.Size = new System.Drawing.Size(1036, 524);
             this.dataGridViewStu.TabIndex = 1;
             this.dataGridViewStu.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewStu_CellMouseDown);
             this.dataGridViewStu.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewStu_DataBindingComplete);
@@ -223,7 +225,7 @@ namespace SMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 500);
+            this.ClientSize = new System.Drawing.Size(1036, 619);
             this.Controls.Add(this.dataGridViewStu);
             this.Controls.Add(this.panelStuSer);
             this.Margin = new System.Windows.Forms.Padding(4);
