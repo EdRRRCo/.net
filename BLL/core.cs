@@ -9,7 +9,15 @@ namespace studentMS.BLL
     public class core
     {
 		private readonly studentMS.DAL.core dal = new studentMS.DAL.core();
-
-		
+        /// <summary>
+        /// 依据学号和姓名查询所满足条件的学生信息列表
+        /// </summary>
+        /// <param name="SNO"></param>
+        /// <param name="SName"></param>
+        /// <returns></returns>
+		public DataSet GetList_student(string SNO,string SName)
+        {
+            return dal.GetList_student(SNO, SName);
+        }
 	}
 }

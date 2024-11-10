@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SMS
 {
-    public partial class Form1 : Form
+    public partial class FormTeacher : Form
     {
-        public Form1()
+        public FormTeacher()
         {
             InitializeComponent();
         }

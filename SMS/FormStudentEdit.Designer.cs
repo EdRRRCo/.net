@@ -30,10 +30,13 @@ namespace SMS
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxDept = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.Submit = new System.Windows.Forms.Button();
             this.Female = new System.Windows.Forms.RadioButton();
             this.Male = new System.Windows.Forms.RadioButton();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
-            this.textBoxDeptNO = new System.Windows.Forms.TextBox();
             this.SAd = new System.Windows.Forms.Label();
             this.SSex = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,22 +44,19 @@ namespace SMS
             this.textBoxSName = new System.Windows.Forms.TextBox();
             this.SName = new System.Windows.Forms.Label();
             this.textBoxSNO = new System.Windows.Forms.TextBox();
-            this.SNO = new System.Windows.Forms.Label();
-            this.Submit = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.dateTimePickerBirthday = new System.Windows.Forms.DateTimePicker();
+            this.SNo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBoxDept);
             this.panel1.Controls.Add(this.dateTimePickerBirthday);
             this.panel1.Controls.Add(this.Cancel);
             this.panel1.Controls.Add(this.Submit);
             this.panel1.Controls.Add(this.Female);
             this.panel1.Controls.Add(this.Male);
             this.panel1.Controls.Add(this.textBoxAddress);
-            this.panel1.Controls.Add(this.textBoxDeptNO);
             this.panel1.Controls.Add(this.SAd);
             this.panel1.Controls.Add(this.SSex);
             this.panel1.Controls.Add(this.label4);
@@ -64,12 +64,47 @@ namespace SMS
             this.panel1.Controls.Add(this.textBoxSName);
             this.panel1.Controls.Add(this.SName);
             this.panel1.Controls.Add(this.textBoxSNO);
-            this.panel1.Controls.Add(this.SNO);
+            this.panel1.Controls.Add(this.SNo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(827, 512);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBoxDept
+            // 
+            this.comboBoxDept.FormattingEnabled = true;
+            this.comboBoxDept.Location = new System.Drawing.Point(522, 188);
+            this.comboBoxDept.Name = "comboBoxDept";
+            this.comboBoxDept.Size = new System.Drawing.Size(150, 23);
+            this.comboBoxDept.TabIndex = 29;
+            // 
+            // dateTimePickerBirthday
+            // 
+            this.dateTimePickerBirthday.Location = new System.Drawing.Point(197, 184);
+            this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
+            this.dateTimePickerBirthday.Size = new System.Drawing.Size(150, 25);
+            this.dateTimePickerBirthday.TabIndex = 28;
+            // 
+            // Cancel
+            // 
+            this.Cancel.Location = new System.Drawing.Point(467, 406);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(75, 32);
+            this.Cancel.TabIndex = 27;
+            this.Cancel.Text = "取消";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // Submit
+            // 
+            this.Submit.Location = new System.Drawing.Point(198, 406);
+            this.Submit.Name = "Submit";
+            this.Submit.Size = new System.Drawing.Size(75, 32);
+            this.Submit.TabIndex = 26;
+            this.Submit.Text = "确定";
+            this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // Female
             // 
@@ -100,13 +135,6 @@ namespace SMS
             this.textBoxAddress.Size = new System.Drawing.Size(488, 25);
             this.textBoxAddress.TabIndex = 23;
             // 
-            // textBoxDeptNO
-            // 
-            this.textBoxDeptNO.Location = new System.Drawing.Point(536, 184);
-            this.textBoxDeptNO.Name = "textBoxDeptNO";
-            this.textBoxDeptNO.Size = new System.Drawing.Size(150, 25);
-            this.textBoxDeptNO.TabIndex = 22;
-            // 
             // SAd
             // 
             this.SAd.AutoSize = true;
@@ -128,7 +156,7 @@ namespace SMS
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(451, 194);
+            this.label4.Location = new System.Drawing.Point(434, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 15);
             this.label4.TabIndex = 18;
@@ -145,7 +173,7 @@ namespace SMS
             // 
             // textBoxSName
             // 
-            this.textBoxSName.Location = new System.Drawing.Point(536, 131);
+            this.textBoxSName.Location = new System.Drawing.Point(522, 131);
             this.textBoxSName.Name = "textBoxSName";
             this.textBoxSName.Size = new System.Drawing.Size(150, 25);
             this.textBoxSName.TabIndex = 16;
@@ -153,7 +181,7 @@ namespace SMS
             // SName
             // 
             this.SName.AutoSize = true;
-            this.SName.Location = new System.Drawing.Point(481, 141);
+            this.SName.Location = new System.Drawing.Point(464, 141);
             this.SName.Name = "SName";
             this.SName.Size = new System.Drawing.Size(37, 15);
             this.SName.TabIndex = 15;
@@ -166,41 +194,14 @@ namespace SMS
             this.textBoxSNO.Size = new System.Drawing.Size(150, 25);
             this.textBoxSNO.TabIndex = 14;
             // 
-            // SNO
+            // SNo
             // 
-            this.SNO.AutoSize = true;
-            this.SNO.Location = new System.Drawing.Point(154, 141);
-            this.SNO.Name = "SNO";
-            this.SNO.Size = new System.Drawing.Size(37, 15);
-            this.SNO.TabIndex = 13;
-            this.SNO.Text = "学号";
-            // 
-            // Submit
-            // 
-            this.Submit.Location = new System.Drawing.Point(198, 406);
-            this.Submit.Name = "Submit";
-            this.Submit.Size = new System.Drawing.Size(75, 32);
-            this.Submit.TabIndex = 26;
-            this.Submit.Text = "确定";
-            this.Submit.UseVisualStyleBackColor = true;
-            this.Submit.Click += new System.EventHandler(this.Submit_Click);
-            // 
-            // Cancel
-            // 
-            this.Cancel.Location = new System.Drawing.Point(467, 406);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 32);
-            this.Cancel.TabIndex = 27;
-            this.Cancel.Text = "取消";
-            this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
-            // 
-            // dateTimePickerBirthday
-            // 
-            this.dateTimePickerBirthday.Location = new System.Drawing.Point(197, 184);
-            this.dateTimePickerBirthday.Name = "dateTimePickerBirthday";
-            this.dateTimePickerBirthday.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePickerBirthday.TabIndex = 28;
+            this.SNo.AutoSize = true;
+            this.SNo.Location = new System.Drawing.Point(154, 141);
+            this.SNo.Name = "SNo";
+            this.SNo.Size = new System.Drawing.Size(37, 15);
+            this.SNo.TabIndex = 13;
+            this.SNo.Text = "学号";
             // 
             // FormStudentEdit
             // 
@@ -209,7 +210,9 @@ namespace SMS
             this.ClientSize = new System.Drawing.Size(827, 512);
             this.Controls.Add(this.panel1);
             this.Name = "FormStudentEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormStudentEdit";
+            this.Load += new System.EventHandler(this.FormStudentEdit_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -224,7 +227,6 @@ namespace SMS
         private System.Windows.Forms.RadioButton Female;
         private System.Windows.Forms.RadioButton Male;
         private System.Windows.Forms.TextBox textBoxAddress;
-        private System.Windows.Forms.TextBox textBoxDeptNO;
         private System.Windows.Forms.Label SAd;
         private System.Windows.Forms.Label SSex;
         private System.Windows.Forms.Label label4;
@@ -232,7 +234,8 @@ namespace SMS
         private System.Windows.Forms.TextBox textBoxSName;
         private System.Windows.Forms.Label SName;
         private System.Windows.Forms.TextBox textBoxSNO;
-        private System.Windows.Forms.Label SNO;
+        private System.Windows.Forms.Label SNo;
         private System.Windows.Forms.DateTimePicker dateTimePickerBirthday;
+        private System.Windows.Forms.ComboBox comboBoxDept;
     }
 }

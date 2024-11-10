@@ -26,7 +26,7 @@ namespace SMS
 
         private void MenuItem23_Click(object sender, EventArgs e)
         {
-            Form1 temp = new Form1();
+            FormTeacher temp = new FormTeacher();
             temp.MdiParent = this;
             temp.Show();
         }
