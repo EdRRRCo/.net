@@ -29,6 +29,33 @@ namespace studentMS.DAL
 
             return DbHelperMySQL.Query(strSql.ToString(), parameters);
         }
+        
+        /// <summary>
+        /// 依据学号SNO获取学生已选课程列表
+        /// </summary>
+        /// <param name="SNO"></param>
+        /// <returns></returns>
+        public DataSet GetList_CourseSelected(string SNO)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT CNO,CName,Credit FROM course ");
+            strSql.Append(" where CNO in (select CNO from s_c where SNO = '" + SNO + " ')");
 
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+        /// <summary>
+        /// 依据学号SNO获取学生可选课程列表
+        /// </summary>
+        /// <param name="SNO"></param>
+        /// <returns></returns>
+        public DataSet GetList_UnCourseSelected(string SNO)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT CNO,CName,Credit FROM course ");
+            strSql.Append(" where CNO not in (select CNO from s_c where SNO = '" + SNO + " ')");
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
     }
 }

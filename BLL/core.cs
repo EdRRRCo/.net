@@ -19,5 +19,24 @@ namespace studentMS.BLL
         {
             return dal.GetList_student(SNO, SName);
         }
-	}
+        /// <summary>
+        /// 依据SNO获取学生已选课程列表
+        /// </summary>
+        /// <param name="SNO"></param>
+        /// <returns></returns>
+        public DataSet GetList_CourseSelected(string SNO)
+        {
+            return dal.GetList_CourseSelected(SNO);
+        }
+
+        /// <summary>
+        /// 依据SNO获取学生可选课程列表
+        /// </summary>
+        /// <param name="SNO"></param>
+        /// <returns></returns>
+        public DataSet GetList_UnCourseSelected(string SNO)
+        {
+            return dal.GetList_UnCourseSelected(SNO);
+        }
+    }
 }

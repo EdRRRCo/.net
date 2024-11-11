@@ -46,28 +46,28 @@ namespace SMS
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.splitter2 = new System.Windows.Forms.Splitter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonSelected = new System.Windows.Forms.Button();
-            this.buttonNO = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewUnChoose = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewChoosed = new System.Windows.Forms.DataGridView();
+            this.CNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonNO = new System.Windows.Forms.Button();
+            this.buttonSelected = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStu)).BeginInit();
             this.panelStuSer.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnChoose)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChoosed)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,6 +101,7 @@ namespace SMS
             this.dataGridViewStu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewStu.Size = new System.Drawing.Size(453, 467);
             this.dataGridViewStu.TabIndex = 2;
+            this.dataGridViewStu.SelectionChanged += new System.EventHandler(this.dataGridViewStu_SelectionChanged);
             // 
             // SNO
             // 
@@ -232,7 +233,7 @@ namespace SMS
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.dataGridViewUnChoose);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 289);
             this.groupBox2.Name = "groupBox2";
@@ -241,114 +242,23 @@ namespace SMS
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "可选课程";
             // 
-            // splitter2
+            // dataGridViewUnChoose
             // 
-            this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter2.Location = new System.Drawing.Point(0, 286);
-            this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(484, 3);
-            this.splitter2.TabIndex = 1;
-            this.splitter2.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(484, 286);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "已选课程";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.buttonNO);
-            this.panel3.Controls.Add(this.buttonSelected);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 234);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(478, 49);
-            this.panel3.TabIndex = 0;
-            // 
-            // buttonSelected
-            // 
-            this.buttonSelected.Location = new System.Drawing.Point(154, 12);
-            this.buttonSelected.Name = "buttonSelected";
-            this.buttonSelected.Size = new System.Drawing.Size(77, 27);
-            this.buttonSelected.TabIndex = 0;
-            this.buttonSelected.Text = "选课";
-            this.buttonSelected.UseVisualStyleBackColor = true;
-            // 
-            // buttonNO
-            // 
-            this.buttonNO.Location = new System.Drawing.Point(309, 12);
-            this.buttonNO.Name = "buttonNO";
-            this.buttonNO.Size = new System.Drawing.Size(75, 27);
-            this.buttonNO.TabIndex = 1;
-            this.buttonNO.Text = "退选";
-            this.buttonNO.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CNO,
-            this.CName,
-            this.Credit});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(478, 213);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // CNO
-            // 
-            this.CNO.DataPropertyName = "CNO";
-            this.CNO.HeaderText = "课程编号";
-            this.CNO.MinimumWidth = 6;
-            this.CNO.Name = "CNO";
-            this.CNO.Width = 125;
-            // 
-            // CName
-            // 
-            this.CName.DataPropertyName = "CName";
-            this.CName.HeaderText = "课程名称";
-            this.CName.MinimumWidth = 6;
-            this.CName.Name = "CName";
-            this.CName.Width = 125;
-            // 
-            // Credit
-            // 
-            this.Credit.DataPropertyName = "Credit";
-            this.Credit.HeaderText = "学分";
-            this.Credit.MinimumWidth = 6;
-            this.Credit.Name = "Credit";
-            this.Credit.Width = 125;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewUnChoose.AllowUserToAddRows = false;
+            this.dataGridViewUnChoose.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUnChoose.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(478, 238);
-            this.dataGridView2.TabIndex = 2;
+            this.dataGridViewUnChoose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewUnChoose.Location = new System.Drawing.Point(3, 21);
+            this.dataGridViewUnChoose.Name = "dataGridViewUnChoose";
+            this.dataGridViewUnChoose.ReadOnly = true;
+            this.dataGridViewUnChoose.RowHeadersWidth = 51;
+            this.dataGridViewUnChoose.RowTemplate.Height = 27;
+            this.dataGridViewUnChoose.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewUnChoose.Size = new System.Drawing.Size(478, 238);
+            this.dataGridViewUnChoose.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -377,6 +287,101 @@ namespace SMS
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 125;
             // 
+            // splitter2
+            // 
+            this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitter2.Location = new System.Drawing.Point(0, 286);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(484, 3);
+            this.splitter2.TabIndex = 1;
+            this.splitter2.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridViewChoosed);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(484, 286);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "已选课程";
+            // 
+            // dataGridViewChoosed
+            // 
+            this.dataGridViewChoosed.AllowUserToAddRows = false;
+            this.dataGridViewChoosed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewChoosed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CNO,
+            this.CName,
+            this.Credit});
+            this.dataGridViewChoosed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewChoosed.Location = new System.Drawing.Point(3, 21);
+            this.dataGridViewChoosed.Name = "dataGridViewChoosed";
+            this.dataGridViewChoosed.ReadOnly = true;
+            this.dataGridViewChoosed.RowHeadersWidth = 51;
+            this.dataGridViewChoosed.RowTemplate.Height = 27;
+            this.dataGridViewChoosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewChoosed.Size = new System.Drawing.Size(478, 213);
+            this.dataGridViewChoosed.TabIndex = 1;
+            // 
+            // CNO
+            // 
+            this.CNO.DataPropertyName = "CNO";
+            this.CNO.HeaderText = "课程编号";
+            this.CNO.MinimumWidth = 6;
+            this.CNO.Name = "CNO";
+            this.CNO.ReadOnly = true;
+            this.CNO.Width = 125;
+            // 
+            // CName
+            // 
+            this.CName.DataPropertyName = "CName";
+            this.CName.HeaderText = "课程名称";
+            this.CName.MinimumWidth = 6;
+            this.CName.Name = "CName";
+            this.CName.ReadOnly = true;
+            this.CName.Width = 125;
+            // 
+            // Credit
+            // 
+            this.Credit.DataPropertyName = "Credit";
+            this.Credit.HeaderText = "学分";
+            this.Credit.MinimumWidth = 6;
+            this.Credit.Name = "Credit";
+            this.Credit.ReadOnly = true;
+            this.Credit.Width = 125;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.buttonNO);
+            this.panel3.Controls.Add(this.buttonSelected);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(3, 234);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(478, 49);
+            this.panel3.TabIndex = 0;
+            // 
+            // buttonNO
+            // 
+            this.buttonNO.Location = new System.Drawing.Point(309, 12);
+            this.buttonNO.Name = "buttonNO";
+            this.buttonNO.Size = new System.Drawing.Size(75, 27);
+            this.buttonNO.TabIndex = 1;
+            this.buttonNO.Text = "退选";
+            this.buttonNO.UseVisualStyleBackColor = true;
+            // 
+            // buttonSelected
+            // 
+            this.buttonSelected.Location = new System.Drawing.Point(154, 12);
+            this.buttonSelected.Name = "buttonSelected";
+            this.buttonSelected.Size = new System.Drawing.Size(77, 27);
+            this.buttonSelected.TabIndex = 0;
+            this.buttonSelected.Text = "选课";
+            this.buttonSelected.UseVisualStyleBackColor = true;
+            this.buttonSelected.Click += new System.EventHandler(this.buttonSelected_Click);
+            // 
             // FormSC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -394,10 +399,10 @@ namespace SMS
             this.panelStuSer.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnChoose)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChoosed)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -423,14 +428,14 @@ namespace SMS
         private System.Windows.Forms.DataGridViewTextBoxColumn DeptName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SBirthday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewChoosed;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Credit;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonNO;
         private System.Windows.Forms.Button buttonSelected;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewUnChoose;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
