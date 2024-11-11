@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormInputScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInputScore.Designer.cs">
+      <DependentUpon>FormInputScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSC.Designer.cs">
       <DependentUpon>FormSC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormScoreQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScoreQuery.Designer.cs">
+      <DependentUpon>FormScoreQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTeacher.cs">
       <SubType>Form</SubType>
@@ -78,8 +90,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormInputScore.resx">
+      <DependentUpon>FormInputScore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSC.resx">
       <DependentUpon>FormSC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormScoreQuery.resx">
+      <DependentUpon>FormScoreQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTeacher.resx">
       <DependentUpon>FormTeacher.cs</DependentUpon>

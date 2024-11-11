@@ -57,5 +57,43 @@ namespace studentMS.DAL
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
+
+        /// <summary>
+        /// 依据课程编号获取选了该课程的学生的学号、姓名和成绩
+        /// </summary>
+        /// <param name="CNO">课程编号</param>
+        /// <returns>DataSet</returns>
+        public DataSet GetList_Score(string CNO)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT a.SNO,b.SName,a.Score from s_c a,student b ");
+            strSql.Append(" where a.SNO = b.SNO and a.CNO = '" + CNO + "'");
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+        /// <summary>
+        /// 依据学号姓名课程名称模糊查询满足条件的成绩记录
+        /// </summary>
+        /// <param name="SNO">学号</param>
+        /// <param name="SName">姓名</param>
+        /// <param name="CName">课程名称</param>
+        /// <returns></returns>
+        public DataSet GetList_Score2(string SNO,string SName,string CName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT a.SNO,b.SName,b.SSex,a.CNO,c.CName,a.Score ");
+            strSql.Append(" from s_c a,student b，course ");
+            strSql.Append(" where a.SNO = b.SNO and a.CNO = c.CNO ");
+
+            if(!(SNO != null || SNO ==""))
+                strSql.Append(" and a.SNO like '%" + SNO + "%'");
+            if (!(SName != null || SName == ""))
+                strSql.Append(" and a.SName like '%" + SName + "%'");
+            if (!(CName != null || CName == ""))
+                strSql.Append(" and a.CName like '%" + CName + "%'");
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
     }
 }

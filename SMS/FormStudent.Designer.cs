@@ -37,16 +37,17 @@ namespace SMS
             this.textBoxSNO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewStu = new System.Windows.Forms.DataGridView();
+            this.contextMenuStripStuEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuItemStuAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemStuEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemStuDel = new System.Windows.Forms.ToolStripMenuItem();
             this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeptNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeptName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStripStuEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MenuItemStuAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemStuEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemStuDel = new System.Windows.Forms.ToolStripMenuItem();
             this.panelStuSer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStu)).BeginInit();
             this.contextMenuStripStuEdit.SuspendLayout();
@@ -119,6 +120,7 @@ namespace SMS
             this.dataGridViewStu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SNO,
+            this.DeptNO,
             this.SName,
             this.SSex,
             this.DeptName,
@@ -138,54 +140,6 @@ namespace SMS
             this.dataGridViewStu.TabIndex = 1;
             this.dataGridViewStu.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewStu_CellMouseDown);
             this.dataGridViewStu.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewStu_DataBindingComplete);
-            // 
-            // SNO
-            // 
-            this.SNO.DataPropertyName = "SNO";
-            this.SNO.HeaderText = "学号";
-            this.SNO.MinimumWidth = 6;
-            this.SNO.Name = "SNO";
-            this.SNO.Width = 125;
-            // 
-            // SName
-            // 
-            this.SName.DataPropertyName = "SName";
-            this.SName.HeaderText = "姓名";
-            this.SName.MinimumWidth = 6;
-            this.SName.Name = "SName";
-            this.SName.Width = 125;
-            // 
-            // SSex
-            // 
-            this.SSex.DataPropertyName = "SSex";
-            this.SSex.HeaderText = "性别";
-            this.SSex.MinimumWidth = 6;
-            this.SSex.Name = "SSex";
-            this.SSex.Width = 125;
-            // 
-            // DeptName
-            // 
-            this.DeptName.DataPropertyName = "DeptName";
-            this.DeptName.HeaderText = "所在学院";
-            this.DeptName.MinimumWidth = 6;
-            this.DeptName.Name = "DeptName";
-            this.DeptName.Width = 125;
-            // 
-            // SBirthday
-            // 
-            this.SBirthday.DataPropertyName = "SBirthday";
-            this.SBirthday.HeaderText = "出生日期";
-            this.SBirthday.MinimumWidth = 6;
-            this.SBirthday.Name = "SBirthday";
-            this.SBirthday.Width = 125;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "住址";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.Width = 125;
             // 
             // contextMenuStripStuEdit
             // 
@@ -221,6 +175,70 @@ namespace SMS
             this.MenuItemStuDel.Text = "删除";
             this.MenuItemStuDel.Click += new System.EventHandler(this.ToolStripMenuItemStuDel_Click);
             // 
+            // SNO
+            // 
+            this.SNO.DataPropertyName = "SNO";
+            this.SNO.HeaderText = "学号";
+            this.SNO.MinimumWidth = 6;
+            this.SNO.Name = "SNO";
+            this.SNO.ReadOnly = true;
+            this.SNO.Width = 125;
+            // 
+            // DeptNO
+            // 
+            this.DeptNO.DataPropertyName = "DeptNO";
+            this.DeptNO.HeaderText = "DeptNO";
+            this.DeptNO.MinimumWidth = 6;
+            this.DeptNO.Name = "DeptNO";
+            this.DeptNO.ReadOnly = true;
+            this.DeptNO.Visible = false;
+            this.DeptNO.Width = 125;
+            // 
+            // SName
+            // 
+            this.SName.DataPropertyName = "SName";
+            this.SName.HeaderText = "姓名";
+            this.SName.MinimumWidth = 6;
+            this.SName.Name = "SName";
+            this.SName.ReadOnly = true;
+            this.SName.Width = 125;
+            // 
+            // SSex
+            // 
+            this.SSex.DataPropertyName = "SSex";
+            this.SSex.HeaderText = "性别";
+            this.SSex.MinimumWidth = 6;
+            this.SSex.Name = "SSex";
+            this.SSex.ReadOnly = true;
+            this.SSex.Width = 125;
+            // 
+            // DeptName
+            // 
+            this.DeptName.DataPropertyName = "DeptName";
+            this.DeptName.HeaderText = "所在学院";
+            this.DeptName.MinimumWidth = 6;
+            this.DeptName.Name = "DeptName";
+            this.DeptName.ReadOnly = true;
+            this.DeptName.Width = 125;
+            // 
+            // SBirthday
+            // 
+            this.SBirthday.DataPropertyName = "SBirthday";
+            this.SBirthday.HeaderText = "出生日期";
+            this.SBirthday.MinimumWidth = 6;
+            this.SBirthday.Name = "SBirthday";
+            this.SBirthday.ReadOnly = true;
+            this.SBirthday.Width = 125;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "住址";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 125;
+            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -252,12 +270,13 @@ namespace SMS
         private System.Windows.Forms.ToolStripMenuItem MenuItemStuAdd;
         private System.Windows.Forms.ToolStripMenuItem MenuItemStuEdit;
         private System.Windows.Forms.ToolStripMenuItem MenuItemStuDel;
+        private System.Windows.Forms.DataGridView dataGridViewStu;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeptNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn SName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SSex;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeptName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SBirthday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridView dataGridViewStu;
     }
 }

@@ -38,5 +38,27 @@ namespace studentMS.BLL
         {
             return dal.GetList_UnCourseSelected(SNO);
         }
+
+        /// <summary>
+        /// 依据课程编号获取选了该课程的学生的学号、姓名和成绩
+        /// </summary>
+        /// <param name="CNO">课程编号</param>
+        /// <returns>DataSet</returns>
+        public DataSet GetList_Score(string CNO)
+        {
+            return dal.GetList_Score(CNO);
+        }
+
+        /// <summary>
+        /// 依据学号姓名课程名称模糊查询满足条件的成绩记录
+        /// </summary>
+        /// <param name="SNO">学号</param>
+        /// <param name="SName">姓名</param>
+        /// <param name="CName">课程名称</param>
+        /// <returns></returns>
+        public DataSet GetList_Score2(string SNO, string SName, string CName)
+        {
+            return dal.GetList_Score2(SNO, SName, CName);
+        }
     }
 }
