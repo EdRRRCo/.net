@@ -60,5 +60,16 @@ namespace studentMS.BLL
         {
             return dal.GetList_Score2(SNO, SName, CName);
         }
+
+        /// <summary>
+        /// 依据课程名称获取学生成绩情况
+        /// </summary>
+        /// <param name="CName"></param>
+        /// <returns></returns>
+        public DataSet GetList_ScoreStatistics(string CName)
+        {
+
+            return dal.GetList_ScoreStatistics(CName);
+        }
     }
 }

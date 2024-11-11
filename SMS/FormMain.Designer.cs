@@ -58,6 +58,10 @@ namespace SMS
             this.MenuItem71 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.MenuItem72 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItem81 = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItem82 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +70,7 @@ namespace SMS
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItem1,
+            this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.MenuItem3,
             this.MenuItem4,
@@ -91,18 +96,18 @@ namespace SMS
             // MenuItem11
             // 
             this.MenuItem11.Name = "MenuItem11";
-            this.MenuItem11.Size = new System.Drawing.Size(152, 26);
+            this.MenuItem11.Size = new System.Drawing.Size(224, 26);
             this.MenuItem11.Text = "重新登录";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // MenuItem12
             // 
             this.MenuItem12.Name = "MenuItem12";
-            this.MenuItem12.Size = new System.Drawing.Size(152, 26);
+            this.MenuItem12.Size = new System.Drawing.Size(224, 26);
             this.MenuItem12.Text = "安全退出";
             // 
             // toolStripMenuItem2
@@ -119,25 +124,25 @@ namespace SMS
             // MenuItem21
             // 
             this.MenuItem21.Name = "MenuItem21";
-            this.MenuItem21.Size = new System.Drawing.Size(152, 26);
+            this.MenuItem21.Size = new System.Drawing.Size(224, 26);
             this.MenuItem21.Text = "学院信息";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
             // 
             // MenuItem22
             // 
             this.MenuItem22.Name = "MenuItem22";
-            this.MenuItem22.Size = new System.Drawing.Size(152, 26);
+            this.MenuItem22.Size = new System.Drawing.Size(224, 26);
             this.MenuItem22.Text = "学生档案";
             this.MenuItem22.Click += new System.EventHandler(this.MenuItem22_Click);
             // 
             // MenuItem23
             // 
             this.MenuItem23.Name = "MenuItem23";
-            this.MenuItem23.Size = new System.Drawing.Size(152, 26);
+            this.MenuItem23.Size = new System.Drawing.Size(224, 26);
             this.MenuItem23.Text = "教师档案";
             this.MenuItem23.Click += new System.EventHandler(this.MenuItem23_Click);
             // 
@@ -217,13 +222,14 @@ namespace SMS
             // MenuItem51
             // 
             this.MenuItem51.Name = "MenuItem51";
-            this.MenuItem51.Size = new System.Drawing.Size(194, 26);
+            this.MenuItem51.Size = new System.Drawing.Size(224, 26);
             this.MenuItem51.Text = "成绩统计--学生";
+            this.MenuItem51.Click += new System.EventHandler(this.MenuItem51_Click);
             // 
             // MenuItem52
             // 
             this.MenuItem52.Name = "MenuItem52";
-            this.MenuItem52.Size = new System.Drawing.Size(194, 26);
+            this.MenuItem52.Size = new System.Drawing.Size(224, 26);
             this.MenuItem52.Text = "成绩统计--课程";
             // 
             // MenuItem6
@@ -238,13 +244,13 @@ namespace SMS
             // toolStripMenuItem23
             // 
             this.toolStripMenuItem23.Name = "toolStripMenuItem23";
-            this.toolStripMenuItem23.Size = new System.Drawing.Size(101, 26);
+            this.toolStripMenuItem23.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem23.Text = "3";
             // 
             // toolStripMenuItem24
             // 
             this.toolStripMenuItem24.Name = "toolStripMenuItem24";
-            this.toolStripMenuItem24.Size = new System.Drawing.Size(101, 26);
+            this.toolStripMenuItem24.Size = new System.Drawing.Size(224, 26);
             this.toolStripMenuItem24.Text = "3";
             // 
             // MenuItem7
@@ -260,19 +266,47 @@ namespace SMS
             // MenuItem71
             // 
             this.MenuItem71.Name = "MenuItem71";
-            this.MenuItem71.Size = new System.Drawing.Size(182, 26);
+            this.MenuItem71.Size = new System.Drawing.Size(224, 26);
             this.MenuItem71.Text = "软件使用手册";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(179, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(221, 6);
             // 
             // MenuItem72
             // 
             this.MenuItem72.Name = "MenuItem72";
-            this.MenuItem72.Size = new System.Drawing.Size(182, 26);
+            this.MenuItem72.Size = new System.Drawing.Size(224, 26);
             this.MenuItem72.Text = "关于系统";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItem81,
+            this.toolStripSeparator6,
+            this.MenuItem82});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(83, 24);
+            this.toolStripMenuItem1.Text = "系统管理";
+            // 
+            // MenuItem81
+            // 
+            this.MenuItem81.Name = "MenuItem81";
+            this.MenuItem81.Size = new System.Drawing.Size(224, 26);
+            this.MenuItem81.Text = "角色管理";
+            this.MenuItem81.Click += new System.EventHandler(this.MenuItem81_Click);
+            // 
+            // MenuItem82
+            // 
+            this.MenuItem82.Name = "MenuItem82";
+            this.MenuItem82.Size = new System.Drawing.Size(224, 26);
+            this.MenuItem82.Text = "用户管理";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(221, 6);
             // 
             // FormMain
             // 
@@ -324,6 +358,10 @@ namespace SMS
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem MenuItem81;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem MenuItem82;
     }
 }
 

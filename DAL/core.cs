@@ -95,5 +95,28 @@ namespace studentMS.DAL
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
+
+
+
+        /// <summary>
+        /// 依据课程名称获取学生成绩情况
+        /// </summary>
+        /// <param name="CName"></param>
+        /// <returns></returns>
+        public DataSet GetList_ScoreStatistics(string CName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT a.SNO,b.SName,b.SSex, ");
+            strSql.Append(" Max(Score) as ScoreMax,Min(Score) as ScoreMin, avg(Score) as ScoreAvg ");
+            strSql.Append(" FROM student.s_c a,student b ");
+
+            if (!(CName != null || CName == ""))
+                strSql.Append(" where a.CNO in(select CNO from course where CName like '%" + CName + "%')");
+            strSql.Append(" group by a.SNO,b.SName,b.SSex; ");
+
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+            
     }
 }
