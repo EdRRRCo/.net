@@ -42,8 +42,8 @@ namespace SMS
             treeNode5});
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("节点1");
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonCommit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonCommit = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,27 +55,27 @@ namespace SMS
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 608);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(404, 83);
+            this.panel1.Size = new System.Drawing.Size(359, 83);
             this.panel1.TabIndex = 0;
-            // 
-            // buttonCommit
-            // 
-            this.buttonCommit.Location = new System.Drawing.Point(97, 23);
-            this.buttonCommit.Name = "buttonCommit";
-            this.buttonCommit.Size = new System.Drawing.Size(81, 35);
-            this.buttonCommit.TabIndex = 0;
-            this.buttonCommit.Text = "提交";
-            this.buttonCommit.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(304, 23);
+            this.buttonCancel.Location = new System.Drawing.Point(220, 23);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(81, 35);
             this.buttonCancel.TabIndex = 1;
             this.buttonCancel.Text = "取消";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonCommit
+            // 
+            this.buttonCommit.Location = new System.Drawing.Point(55, 23);
+            this.buttonCommit.Name = "buttonCommit";
+            this.buttonCommit.Size = new System.Drawing.Size(81, 35);
+            this.buttonCommit.TabIndex = 0;
+            this.buttonCommit.Text = "提交";
+            this.buttonCommit.UseVisualStyleBackColor = true;
             // 
             // treeView1
             // 
@@ -96,13 +96,14 @@ namespace SMS
             treeNode5.Name = "节点4";
             treeNode5.Text = "节点4";
             treeNode6.Name = "节点0";
+            treeNode6.Tag = "";
             treeNode6.Text = "节点0";
             treeNode7.Name = "节点1";
             treeNode7.Text = "节点1";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode6,
             treeNode7});
-            this.treeView1.Size = new System.Drawing.Size(404, 608);
+            this.treeView1.Size = new System.Drawing.Size(359, 608);
             this.treeView1.TabIndex = 1;
             // 
             // FormRoleRight
@@ -110,11 +111,14 @@ namespace SMS
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(404, 691);
+            this.ClientSize = new System.Drawing.Size(359, 691);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "FormRoleRight";
-            this.Text = "FormRoleRight";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FormRoleRight_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

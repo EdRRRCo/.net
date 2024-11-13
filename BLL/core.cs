@@ -71,5 +71,16 @@ namespace studentMS.BLL
 
             return dal.GetList_ScoreStatistics(CName);
         }
+
+        /// <summary>
+        /// 依据RoleID获取当前系统所有权限以及该角色以拥有的权限
+        /// </summary>
+        /// <param name="RoleID">角色ID</param>
+        /// <returns></returns>
+        public DataSet GetList_RoleRight(string RoleID)
+        {
+            return dal.GetList_RoleRight(RoleID);
+        }
+
     }
 }

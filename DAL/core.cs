@@ -117,6 +117,19 @@ namespace studentMS.DAL
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
+
+        /// <summary>
+        /// 依据RoleID获取当前系统所有权限以及该角色以拥有的权限
+        /// </summary>
+        /// <param name="RoleID">角色ID</param>
+        /// <returns></returns>
+        public DataSet GetList_RoleRight(string RoleID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT a.FID,a.FName,a.ParentFID as Have from b_sysfunction a ");
+            strSql.Append(" left join b_roleright b on a.FID = b.FID and b.RoleID = " + RoleID);
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
             
     }
 }
