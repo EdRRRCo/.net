@@ -114,6 +114,9 @@
     <EmbeddedResource Include="FormRole.resx">
       <DependentUpon>FormRole.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormRoleRight.resx">
+      <DependentUpon>FormRoleRight.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSC.resx">
       <DependentUpon>FormSC.cs</DependentUpon>
     </EmbeddedResource>
