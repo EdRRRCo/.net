@@ -126,10 +126,49 @@ namespace studentMS.DAL
         public DataSet GetList_RoleRight(string RoleID)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT a.FID,a.FName,a.ParentFID as Have from b_sysfunction a ");
-            strSql.Append(" left join b_roleright b on a.FID = b.FID and b.RoleID = " + RoleID);
+            strSql.Append("SELECT a.FID,a.FName,a.ParentFID,b.FID as Have from b_sysfunction a ");
+            strSql.Append(" left join b_roleright b on a.FID = b.FID and b.RoleID =" + RoleID);
+
             return DbHelperMySQL.Query(strSql.ToString());
         }
             
+
+        /// <summary>
+        /// 依据uid模糊查询符合条件的数据集
+        /// </summary>
+        /// <param name="UID">用户名</param>
+        /// <returns></returns>
+        public DataSet GetList_User(string UID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT a.UID,a.RoleID,a.UPriorTime,a.UPriorIP,a.Remark,b.RoleName ");
+            strSql.Append(" FROM b_user a,b_role b where a.RoleID=b.RoleID " );
+
+            if(UID != "")
+            {
+                strSql.Append(" and UID like '%" + UID +"%'");
+            }
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+
+        /// <summary>
+        /// 依据用户名和密码查询该用户是否存在
+        /// </summary>
+        /// <param name="UID">用户名</param>
+        /// <param name="UCode">密码</param>
+        /// <returns></returns>
+        public bool ExistUIDUCode(string UID, string UCode)
+        {
+            string strsql = "SELECT count(UID) FROM b_user where UID = '"
+                + UID + "' and UCode = '" + UCode + "'";
+            Object obj = DbHelperMySQL.GetSingle(strsql);
+
+            if (obj == null || obj.ToString() == "" || obj.ToString() == "0")
+                return false;
+            else
+                return true;
+        }
     }
 }

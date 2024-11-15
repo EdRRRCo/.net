@@ -29,18 +29,18 @@ namespace SMS
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("节点5");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("节点6");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("节点2", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("节点3");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("节点4");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("节点0", new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("节点1");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("节点5");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("节点6");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("节点2", new System.Windows.Forms.TreeNode[] {
+            treeNode8,
+            treeNode9});
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("节点3");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("节点4");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("节点0", new System.Windows.Forms.TreeNode[] {
+            treeNode10,
+            treeNode11,
+            treeNode12});
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("节点1");
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonCommit = new System.Windows.Forms.Button();
@@ -76,6 +76,7 @@ namespace SMS
             this.buttonCommit.TabIndex = 0;
             this.buttonCommit.Text = "提交";
             this.buttonCommit.UseVisualStyleBackColor = true;
+            this.buttonCommit.Click += new System.EventHandler(this.buttonCommit_Click);
             // 
             // treeView1
             // 
@@ -85,24 +86,24 @@ namespace SMS
             this.treeView1.ItemHeight = 20;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "节点5";
-            treeNode1.Text = "节点5";
-            treeNode2.Name = "节点6";
-            treeNode2.Text = "节点6";
-            treeNode3.Name = "节点2";
-            treeNode3.Text = "节点2";
-            treeNode4.Name = "节点3";
-            treeNode4.Text = "节点3";
-            treeNode5.Name = "节点4";
-            treeNode5.Text = "节点4";
-            treeNode6.Name = "节点0";
-            treeNode6.Tag = "";
-            treeNode6.Text = "节点0";
-            treeNode7.Name = "节点1";
-            treeNode7.Text = "节点1";
+            treeNode8.Name = "节点5";
+            treeNode8.Text = "节点5";
+            treeNode9.Name = "节点6";
+            treeNode9.Text = "节点6";
+            treeNode10.Name = "节点2";
+            treeNode10.Text = "节点2";
+            treeNode11.Name = "节点3";
+            treeNode11.Text = "节点3";
+            treeNode12.Name = "节点4";
+            treeNode12.Text = "节点4";
+            treeNode13.Name = "节点0";
+            treeNode13.Tag = "";
+            treeNode13.Text = "节点0";
+            treeNode14.Name = "节点1";
+            treeNode14.Text = "节点1";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7});
+            treeNode13,
+            treeNode14});
             this.treeView1.Size = new System.Drawing.Size(359, 608);
             this.treeView1.TabIndex = 1;
             // 
@@ -115,6 +116,7 @@ namespace SMS
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormRoleRight";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

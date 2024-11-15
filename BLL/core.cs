@@ -82,5 +82,26 @@ namespace studentMS.BLL
             return dal.GetList_RoleRight(RoleID);
         }
 
+
+        /// <summary>
+        /// 依据uid模糊查询符合条件的数据集
+        /// </summary>
+        /// <param name="UID">用户名</param>
+        /// <returns></returns>
+        public DataSet GetList_User(string UID)
+        {
+            return dal.GetList_User(UID);
+        }
+
+        /// <summary>
+        /// 依据用户名和密码查询该用户是否存在
+        /// </summary>
+        /// <param name="UID">用户名</param>
+        /// <param name="UCode">密码</param>
+        /// <returns></returns>
+        public bool ExistUIDUCode(string UID, string UCode)
+        {
+            return dal.ExistUIDUCode(UID,UCode);
+        }
     }
 }

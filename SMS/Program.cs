@@ -16,7 +16,14 @@ namespace SMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+
+
+            //登录
+            FormLogin login = new FormLogin();
+            login.ShowDialog();
+
+            if(login.DialogResult == DialogResult.OK)//用户密码校验成功后展示主界面
+                Application.Run(new FormMain());
         }
     }
 }
