@@ -52,7 +52,7 @@ namespace SMS
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(952, 94);
+            this.panel1.Size = new System.Drawing.Size(1008, 94);
             this.panel1.TabIndex = 0;
             // 
             // buttonQuery
@@ -99,7 +99,7 @@ namespace SMS
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(952, 510);
+            this.dataGridView1.Size = new System.Drawing.Size(1008, 510);
             this.dataGridView1.TabIndex = 1;
             // 
             // UID
@@ -109,6 +109,7 @@ namespace SMS
             this.UID.MinimumWidth = 6;
             this.UID.Name = "UID";
             this.UID.ReadOnly = true;
+            this.UID.Width = 125;
             // 
             // RoleID
             // 
@@ -160,10 +161,11 @@ namespace SMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 604);
+            this.ClientSize = new System.Drawing.Size(1008, 604);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "FormUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "用户管理";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

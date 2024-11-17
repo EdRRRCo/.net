@@ -170,5 +170,19 @@ namespace studentMS.DAL
             else
                 return true;
         }
+
+        /// <summary>
+        /// 获取用户user的权限列表
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public DataSet Get_RightByUser(string user)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT FID from b_roleright ");
+            strSql.Append(" where RoleID in (select RoleID from b_user where UID ='"+ user +"')");
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
     }
 }

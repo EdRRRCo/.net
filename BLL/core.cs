@@ -9,6 +9,9 @@ namespace studentMS.BLL
     public class core
     {
 		private readonly studentMS.DAL.core dal = new studentMS.DAL.core();
+
+        private static string strUserRight = "";//保存登录用户的所有权限
+
         /// <summary>
         /// 依据学号和姓名查询所满足条件的学生信息列表
         /// </summary>
@@ -102,6 +105,17 @@ namespace studentMS.BLL
         public bool ExistUIDUCode(string UID, string UCode)
         {
             return dal.ExistUIDUCode(UID,UCode);
+        }
+
+
+        /// <summary>
+        /// 获取用户user的权限列表
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public void Get_RightByUser(string user)
+        {
+            strUserRight = ",";
         }
     }
 }

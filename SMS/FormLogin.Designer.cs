@@ -80,7 +80,7 @@ namespace SMS
             // buttonLogin
             // 
             this.buttonLogin.Font = new System.Drawing.Font("宋体", 11F);
-            this.buttonLogin.Location = new System.Drawing.Point(251, 355);
+            this.buttonLogin.Location = new System.Drawing.Point(258, 318);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(132, 50);
             this.buttonLogin.TabIndex = 4;
@@ -111,9 +111,10 @@ namespace SMS
             this.pictureBox1.Location = new System.Drawing.Point(468, 214);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 44);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormLogin
             // 
@@ -150,6 +151,6 @@ namespace SMS
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.TextBox textBoxVerify;
         private System.Windows.Forms.Label labelVerify;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        protected internal System.Windows.Forms.PictureBox pictureBox1;
     }
 }
