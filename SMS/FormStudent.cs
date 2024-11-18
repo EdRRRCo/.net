@@ -12,6 +12,8 @@ namespace SMS
 {
     public partial class FormStudent : Form
     {
+        private bool rightAdd, rightDelete, rightEdit;//权限控制
+
         public FormStudent()
         {
             InitializeComponent();
@@ -86,9 +88,8 @@ namespace SMS
         private void dataGridViewStu_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             //设置弹出类菜单的可用性
-            this.MenuItemStuAdd.Enabled = true;//新增
-            this.MenuItemStuEdit.Enabled = this.dataGridViewStu.Rows.Count > 0;//修改
-            this.MenuItemStuDel.Enabled = this.dataGridViewStu.Rows.Count > 0;//删除
+            this.MenuItemStuEdit.Enabled = this.dataGridViewStu.Rows.Count > 0 && rightEdit;//修改
+            this.MenuItemStuDel.Enabled = this.dataGridViewStu.Rows.Count > 0 && rightDelete;//删除
         }
 
 
@@ -126,6 +127,18 @@ namespace SMS
                     break;
                 }
             }
+        }
+
+        private void FormStudent_Load(object sender, EventArgs e)
+        {
+            studentMS.BLL.core core = new studentMS.BLL.core();//实例化BLL层
+
+            //判断当前登录用户是否拥有学生档案（增删改）的三项权限
+            rightAdd = core.haveRight("2201");
+            rightDelete = core.haveRight("2203");
+            rightEdit = core.haveRight("2202");
+
+            this.MenuItemStuAdd.Enabled = rightAdd;//新增
         }
     }
 }

@@ -115,7 +115,29 @@ namespace studentMS.BLL
         /// <returns></returns>
         public void Get_RightByUser(string user)
         {
-            strUserRight = ",";
+            strUserRight = ",";//初始化
+
+
+            //从数据库中获取登录用户的所有权限列表
+            DataTable tb_right = new studentMS.DAL.core().Get_RightByUser(user).Tables[0];
+
+            //遍历DataTable中所有记录，八FID累加到字符串=石头人UserRIght中
+            foreach(DataRow row in tb_right.Rows)
+            {
+                strUserRight += row["FID"].ToString() + ",";
+            }
+
+        }
+
+
+        /// <summary>
+        /// 判断当前登录用户名是否拥有编号为FID的权限
+        /// </summary>
+        /// <param name="FID">权限编号</param>
+        /// <returns></returns>
+        public bool haveRight(string FID)
+        {
+            return strUserRight.Contains("," + FID + ",");
         }
     }
 }

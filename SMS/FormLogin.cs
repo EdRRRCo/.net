@@ -44,6 +44,9 @@ namespace SMS
             studentMS.BLL.core core = new studentMS.BLL.core();//实例化BLL层
             if (core.ExistUIDUCode(this.textBoxUID.Text.Trim(), this.textBoxUCode.Text.Trim()))
             {
+
+                //或许用户权限
+                new studentMS.BLL.core().Get_RightByUser(this.textBoxUID.Text.Trim());
                 this.DialogResult = DialogResult.OK;//设置窗体返回值
                 this.Close();//关闭登录界面并释放资源
             }

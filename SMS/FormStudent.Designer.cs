@@ -37,10 +37,6 @@ namespace SMS
             this.textBoxSNO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewStu = new System.Windows.Forms.DataGridView();
-            this.contextMenuStripStuEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.MenuItemStuAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemStuEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemStuDel = new System.Windows.Forms.ToolStripMenuItem();
             this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeptNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +44,10 @@ namespace SMS
             this.DeptName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStripStuEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuItemStuAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemStuEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemStuDel = new System.Windows.Forms.ToolStripMenuItem();
             this.panelStuSer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStu)).BeginInit();
             this.contextMenuStripStuEdit.SuspendLayout();
@@ -141,40 +141,6 @@ namespace SMS
             this.dataGridViewStu.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewStu_CellMouseDown);
             this.dataGridViewStu.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewStu_DataBindingComplete);
             // 
-            // contextMenuStripStuEdit
-            // 
-            this.contextMenuStripStuEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.contextMenuStripStuEdit.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripStuEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemStuAdd,
-            this.MenuItemStuEdit,
-            this.MenuItemStuDel});
-            this.contextMenuStripStuEdit.Name = "contextMenuStripStuEdit";
-            this.contextMenuStripStuEdit.Size = new System.Drawing.Size(109, 76);
-            // 
-            // MenuItemStuAdd
-            // 
-            this.MenuItemStuAdd.Name = "MenuItemStuAdd";
-            this.MenuItemStuAdd.Size = new System.Drawing.Size(108, 24);
-            this.MenuItemStuAdd.Text = "新增";
-            this.MenuItemStuAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
-            // 
-            // MenuItemStuEdit
-            // 
-            this.MenuItemStuEdit.Enabled = false;
-            this.MenuItemStuEdit.Name = "MenuItemStuEdit";
-            this.MenuItemStuEdit.Size = new System.Drawing.Size(108, 24);
-            this.MenuItemStuEdit.Text = "修改";
-            this.MenuItemStuEdit.Click += new System.EventHandler(this.ToolStripMenuItemStuEdit_Click);
-            // 
-            // MenuItemStuDel
-            // 
-            this.MenuItemStuDel.Enabled = false;
-            this.MenuItemStuDel.Name = "MenuItemStuDel";
-            this.MenuItemStuDel.Size = new System.Drawing.Size(108, 24);
-            this.MenuItemStuDel.Text = "删除";
-            this.MenuItemStuDel.Click += new System.EventHandler(this.ToolStripMenuItemStuDel_Click);
-            // 
             // SNO
             // 
             this.SNO.DataPropertyName = "SNO";
@@ -239,6 +205,40 @@ namespace SMS
             this.Address.ReadOnly = true;
             this.Address.Width = 125;
             // 
+            // contextMenuStripStuEdit
+            // 
+            this.contextMenuStripStuEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.contextMenuStripStuEdit.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripStuEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemStuAdd,
+            this.MenuItemStuEdit,
+            this.MenuItemStuDel});
+            this.contextMenuStripStuEdit.Name = "contextMenuStripStuEdit";
+            this.contextMenuStripStuEdit.Size = new System.Drawing.Size(109, 76);
+            // 
+            // MenuItemStuAdd
+            // 
+            this.MenuItemStuAdd.Name = "MenuItemStuAdd";
+            this.MenuItemStuAdd.Size = new System.Drawing.Size(108, 24);
+            this.MenuItemStuAdd.Text = "新增";
+            this.MenuItemStuAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
+            // 
+            // MenuItemStuEdit
+            // 
+            this.MenuItemStuEdit.Enabled = false;
+            this.MenuItemStuEdit.Name = "MenuItemStuEdit";
+            this.MenuItemStuEdit.Size = new System.Drawing.Size(108, 24);
+            this.MenuItemStuEdit.Text = "修改";
+            this.MenuItemStuEdit.Click += new System.EventHandler(this.ToolStripMenuItemStuEdit_Click);
+            // 
+            // MenuItemStuDel
+            // 
+            this.MenuItemStuDel.Enabled = false;
+            this.MenuItemStuDel.Name = "MenuItemStuDel";
+            this.MenuItemStuDel.Size = new System.Drawing.Size(108, 24);
+            this.MenuItemStuDel.Text = "删除";
+            this.MenuItemStuDel.Click += new System.EventHandler(this.ToolStripMenuItemStuDel_Click);
+            // 
             // FormStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -250,6 +250,7 @@ namespace SMS
             this.Name = "FormStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "学生档案";
+            this.Load += new System.EventHandler(this.FormStudent_Load);
             this.panelStuSer.ResumeLayout(false);
             this.panelStuSer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStu)).EndInit();
