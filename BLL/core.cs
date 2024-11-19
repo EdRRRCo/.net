@@ -22,6 +22,29 @@ namespace studentMS.BLL
         {
             return dal.GetList_student(SNO, SName);
         }
+
+        /// <summary>
+        /// 依据工号和姓名查询所满足的老师信息列表
+        /// </summary>
+        /// <param name="TNO"></param>
+        /// <param name="TName"></param>
+        /// <returns></returns>
+        public DataSet GetList_Teacher(string TNO, string TName)
+        {
+            return dal.GetList_Teacher(TNO,TName);
+        }
+
+        /// <summary>
+        /// 依据课程编号和课程名称查询所满足的课程信息列表
+        /// </summary>
+        /// <param name="CNO"></param>
+        /// <param name="CName"></param>
+        /// <returns></returns>
+        public DataSet GetList_Course(string CNO, string CName)
+        {
+            return dal.GetList_Course(CNO, CName);
+        }
+
         /// <summary>
         /// 依据SNO获取学生已选课程列表
         /// </summary>
@@ -62,6 +85,17 @@ namespace studentMS.BLL
         public DataSet GetList_Score2(string SNO, string SName, string CName)
         {
             return dal.GetList_Score2(SNO, SName, CName);
+        }
+
+        /// <summary>
+        /// 依据学院代码和学院名称模糊查询学院信息
+        /// </summary>
+        /// <param name="DeptNO">学院代码</param>
+        /// <param name="DeptName">学院名称</param>
+        /// <returns></returns>
+        public DataSet GetList_Dept(string DeptNO, string DeptName)
+        {
+            return dal.GetList_Dept(DeptNO,DeptName);
         }
 
         /// <summary>
@@ -128,7 +162,6 @@ namespace studentMS.BLL
             }
 
         }
-
 
         /// <summary>
         /// 判断当前登录用户名是否拥有编号为FID的权限

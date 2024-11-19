@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCourse.Designer.cs">
+      <DependentUpon>FormCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCourseEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCourseEdit.Designer.cs">
+      <DependentUpon>FormCourseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDept.Designer.cs">
+      <DependentUpon>FormDept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeptEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeptEdit.Designer.cs">
+      <DependentUpon>FormDeptEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInputScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,12 +112,6 @@
     <Compile Include="FormScoreStatistics.Designer.cs">
       <DependentUpon>FormScoreStatistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTeacher.Designer.cs">
-      <DependentUpon>FormTeacher.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +130,18 @@
     <Compile Include="FormStudentEdit.Designer.cs">
       <DependentUpon>FormStudentEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeacher.Designer.cs">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTeacherEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTeacherEdit.Designer.cs">
+      <DependentUpon>FormTeacherEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +150,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCourse.resx">
+      <DependentUpon>FormCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCourseEdit.resx">
+      <DependentUpon>FormCourseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDept.resx">
+      <DependentUpon>FormDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeptEdit.resx">
+      <DependentUpon>FormDeptEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInputScore.resx">
       <DependentUpon>FormInputScore.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,9 +183,6 @@
     <EmbeddedResource Include="FormScoreStatistics.resx">
       <DependentUpon>FormScoreStatistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTeacher.resx">
-      <DependentUpon>FormTeacher.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStudentEdit.resx">
       <DependentUpon>FormStudentEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTeacher.resx">
+      <DependentUpon>FormTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTeacherEdit.resx">
+      <DependentUpon>FormTeacherEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>

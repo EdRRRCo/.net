@@ -29,7 +29,47 @@ namespace studentMS.DAL
 
             return DbHelperMySQL.Query(strSql.ToString(), parameters);
         }
-        
+
+        /// <summary>
+        /// 依据工号和姓名查询所满足的老师信息列表
+        /// </summary>
+        /// <param name="TNO"></param>
+        /// <param name="TName"></param>
+        /// <returns></returns>
+        public DataSet GetList_Teacher(string TNO,string TName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * from teacher ");
+            strSql.Append(" where TNO like ?TNO and TName like ?TName");
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?TNO", MySqlDbType.VarChar),
+                    new MySqlParameter("?TName", MySqlDbType.VarChar)};
+            parameters[0].Value = "%" + TNO + "%";
+            parameters[1].Value = "%" + TName + "%";
+
+            return DbHelperMySQL.Query(strSql.ToString(), parameters);
+        }
+
+        /// <summary>
+        /// 依据课程编号和课程名称查询所满足的课程信息列表
+        /// </summary>
+        /// <param name="CNO"></param>
+        /// <param name="CName"></param>
+        /// <returns></returns>
+        public DataSet GetList_Course(string CNO, string CName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * from course ");
+            strSql.Append(" where CNO like ?CNO and CName like ?CName");
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?CNO", MySqlDbType.VarChar),
+                    new MySqlParameter("?CName", MySqlDbType.VarChar)};
+            parameters[0].Value = "%" + CNO + "%";
+            parameters[1].Value = "%" + CName + "%";
+
+            return DbHelperMySQL.Query(strSql.ToString(), parameters);
+        }
+
         /// <summary>
         /// 依据学号SNO获取学生已选课程列表
         /// </summary>
@@ -83,19 +123,39 @@ namespace studentMS.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT a.SNO,b.SName,b.SSex,a.CNO,c.CName,a.Score ");
-            strSql.Append(" from s_c a,student b，course ");
+            strSql.Append(" from s_c a,student b,course c ");
             strSql.Append(" where a.SNO = b.SNO and a.CNO = c.CNO ");
 
-            if(!(SNO != null || SNO ==""))
+            if(!(SNO == null || SNO ==""))
                 strSql.Append(" and a.SNO like '%" + SNO + "%'");
-            if (!(SName != null || SName == ""))
-                strSql.Append(" and a.SName like '%" + SName + "%'");
-            if (!(CName != null || CName == ""))
-                strSql.Append(" and a.CName like '%" + CName + "%'");
+            if (!(SName == null || SName == ""))
+                strSql.Append(" and b.SName like '%" + SName + "%'");
+            if (!(CName == null || CName == ""))
+                strSql.Append(" and c.CName like '%" + CName + "%'");
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
+        /// <summary>
+        /// 依据学院代码和学院名称模糊查询学院信息
+        /// </summary>
+        /// <param name="DeptNO">学院代码</param>
+        /// <param name="DeptName">学院名称</param>
+        /// <returns></returns>
+        public DataSet GetList_Dept(string DeptNO,string DeptName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT DeptNO,DeptName FROM student.department ");
+
+            if (!(DeptNO == null || DeptNO == "") && (DeptName == null || DeptName == ""))
+                strSql.Append("where DeptNO like '%" + DeptNO + "%'");
+            if (!(DeptName == null || DeptName == "") && (DeptNO == null || DeptNO == ""))
+                strSql.Append("where DeptName like '%" + DeptName + "%'");
+            if (!(DeptName == null || DeptName == "") && !(DeptNO == null || DeptNO == ""))
+                strSql.Append("where DeptNO like '%" + DeptNO + "%' and DeptName like '%" + DeptName + "%'");
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
 
 
         /// <summary>
