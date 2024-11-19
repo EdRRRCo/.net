@@ -23,7 +23,7 @@
                     </asp:TreeNode>
                     <asp:TreeNode Text="档案管理" Value="新建节点">
                         <asp:TreeNode Text="学院信息" Value="学院信息"></asp:TreeNode>
-                        <asp:TreeNode Text="学生档案" Value="学生档案"></asp:TreeNode>
+                        <asp:TreeNode Text="学生档案" Value="学生档案" NavigateUrl="~/student.aspx" Target="mainFrame"></asp:TreeNode>
                         <asp:TreeNode Text="教师档案" Value="教师档案"></asp:TreeNode>
                     </asp:TreeNode>
                     <asp:TreeNode Text="课程管理" Value="新建节点">
