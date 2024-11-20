@@ -27,10 +27,68 @@ namespace SMS
 
             if (temp.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show(this, "新增学院档案成功！\n", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "新增课程信息成功！\n", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.buttonQuery_Click(this.buttonQuery, e);//调用查询按钮的单击事件来刷新数据显示
-                this.DataGridViewRelocation(this.dataGridView1, "DeptNO", temp.DeptNO);//刷新后重新定位
+                this.DataGridViewRelocation(this.dataGridView1, "CNO", temp.CNO);//刷新后重新定位
                 return;
+            }
+        }
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.X >= 0 && e.Y >= 0)//校验是否按下鼠标右键以及鼠标坐标在dataGridView的内部
+            {
+                this.dataGridView1.ClearSelection();//清空所有的选择
+                //this.dataGridViewStu.CurrentRow.Selected = false;//清除当前选中的行
+                this.dataGridView1.Rows[e.RowIndex].Selected = true;//选中当前鼠标所在行
+            }
+            else
+            {
+            }
+        }
+
+        private void MenuItemEdit_Click(object sender, EventArgs e)
+        {
+            //修改
+            //获取dataGridViewStu中当前所选中的记录的学号并保存到sno中
+            //索引超出范围，数组才会出现的错误，dataGridViewStu的seclectionMode改为整行选择
+            string cno = this.dataGridView1.SelectedRows[0].Cells["CNO"].Value.ToString();
+
+
+            FormCourseEdit temp = new FormCourseEdit(cno);//实例化，需要传参数
+            temp.ShowDialog();//调用方法ShowDialog以对话框的方式输出
+
+            if (temp.DialogResult == DialogResult.OK)
+            {
+                MessageBox.Show(this, "修改课程信息成功！\n", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.buttonQuery_Click(this.buttonQuery, e);//调用查询按钮的单击事件来刷新数据显示
+                this.DataGridViewRelocation(this.dataGridView1, "CNO", cno);//数据刷新后选中项重新定位
+                return;
+            }
+        }
+
+        private void MenuItemDel_Click(object sender, EventArgs e)
+        {
+            //删除
+            //删除确认提示框
+            if (MessageBox.Show(this, "您确定要删除您所选中的课程吗？\n", "删除确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                //从数据库中删除记录
+                studentMS.BLL.course bll = new studentMS.BLL.course();//实例化BLL层中的student类
+
+                //获取dataGridViewStu中选中的学号sno
+                string sno = this.dataGridView1.SelectedRows[0].Cells["CNO"].Value.ToString();
+                try
+                {
+                    bll.Delete(sno);//物理删除
+                    MessageBox.Show(this, "删除成功！\n", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.buttonQuery_Click(this.buttonQuery, e);//调用查询功能实现刷新数据显示
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, "删除失败!\n" + ex.Message, "出错啦", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
         }
 

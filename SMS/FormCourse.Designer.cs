@@ -31,15 +31,15 @@ namespace SMS
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxCNO = new System.Windows.Forms.TextBox();
             this.labelDeptNO = new System.Windows.Forms.Label();
             this.buttonQuery = new System.Windows.Forms.Button();
             this.textBoxCName = new System.Windows.Forms.TextBox();
             this.labelDeptName = new System.Windows.Forms.Label();
-            this.CNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuItemAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,11 +60,40 @@ namespace SMS
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 79);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(863, 423);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
+            // 
+            // CNO
+            // 
+            this.CNO.DataPropertyName = "CNO";
+            this.CNO.HeaderText = "课程编号";
+            this.CNO.MinimumWidth = 6;
+            this.CNO.Name = "CNO";
+            this.CNO.ReadOnly = true;
+            this.CNO.Width = 130;
+            // 
+            // CName
+            // 
+            this.CName.DataPropertyName = "CName";
+            this.CName.HeaderText = "课程名称";
+            this.CName.MinimumWidth = 6;
+            this.CName.Name = "CName";
+            this.CName.ReadOnly = true;
+            this.CName.Width = 200;
+            // 
+            // Credit
+            // 
+            this.Credit.DataPropertyName = "Credit";
+            this.Credit.HeaderText = "学分";
+            this.Credit.MinimumWidth = 6;
+            this.Credit.Name = "Credit";
+            this.Credit.ReadOnly = true;
+            this.Credit.Width = 125;
             // 
             // panel1
             // 
@@ -122,30 +151,6 @@ namespace SMS
             this.labelDeptName.TabIndex = 0;
             this.labelDeptName.Text = "课程名称";
             // 
-            // CNO
-            // 
-            this.CNO.DataPropertyName = "CNO";
-            this.CNO.HeaderText = "课程编号";
-            this.CNO.MinimumWidth = 6;
-            this.CNO.Name = "CNO";
-            this.CNO.Width = 130;
-            // 
-            // CName
-            // 
-            this.CName.DataPropertyName = "CName";
-            this.CName.HeaderText = "课程名称";
-            this.CName.MinimumWidth = 6;
-            this.CName.Name = "CName";
-            this.CName.Width = 200;
-            // 
-            // Credit
-            // 
-            this.Credit.DataPropertyName = "Credit";
-            this.Credit.HeaderText = "学分";
-            this.Credit.MinimumWidth = 6;
-            this.Credit.Name = "Credit";
-            this.Credit.Width = 125;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -166,14 +171,16 @@ namespace SMS
             // MenuItemEdit
             // 
             this.MenuItemEdit.Name = "MenuItemEdit";
-            this.MenuItemEdit.Size = new System.Drawing.Size(108, 24);
+            this.MenuItemEdit.Size = new System.Drawing.Size(210, 24);
             this.MenuItemEdit.Text = "修改";
+            this.MenuItemEdit.Click += new System.EventHandler(this.MenuItemEdit_Click);
             // 
             // MenuItemDel
             // 
             this.MenuItemDel.Name = "MenuItemDel";
-            this.MenuItemDel.Size = new System.Drawing.Size(108, 24);
+            this.MenuItemDel.Size = new System.Drawing.Size(210, 24);
             this.MenuItemDel.Text = "删除";
+            this.MenuItemDel.Click += new System.EventHandler(this.MenuItemDel_Click);
             // 
             // FormCourse
             // 

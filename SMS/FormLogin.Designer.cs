@@ -97,6 +97,7 @@ namespace SMS
             this.textBoxVerify.Name = "textBoxVerify";
             this.textBoxVerify.Size = new System.Drawing.Size(210, 28);
             this.textBoxVerify.TabIndex = 6;
+            this.textBoxVerify.Tag = "";
             // 
             // labelVerify
             // 

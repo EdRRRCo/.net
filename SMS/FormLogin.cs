@@ -62,6 +62,8 @@ namespace SMS
             this.textBoxUID.Select();//把焦点放在用户名编辑框
 
             this.CreateVerifyCode();//调用生成验证码的方法
+
+            this.textBoxVerify.Text = VerifyCode;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

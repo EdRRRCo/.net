@@ -47,6 +47,9 @@ namespace SMS
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewUnChoose = new System.Windows.Forms.DataGridView();
+            this.CNO2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewChoosed = new System.Windows.Forms.DataGridView();
@@ -56,9 +59,6 @@ namespace SMS
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonNO = new System.Windows.Forms.Button();
             this.buttonSelected = new System.Windows.Forms.Button();
-            this.CNO2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStu)).BeginInit();
             this.panelStuSer.SuspendLayout();
@@ -96,6 +96,7 @@ namespace SMS
             this.dataGridViewStu.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewStu.MultiSelect = false;
             this.dataGridViewStu.Name = "dataGridViewStu";
+            this.dataGridViewStu.ReadOnly = true;
             this.dataGridViewStu.RowHeadersWidth = 51;
             this.dataGridViewStu.RowTemplate.Height = 23;
             this.dataGridViewStu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -109,6 +110,7 @@ namespace SMS
             this.SNO.HeaderText = "学号";
             this.SNO.MinimumWidth = 6;
             this.SNO.Name = "SNO";
+            this.SNO.ReadOnly = true;
             this.SNO.Width = 125;
             // 
             // SName
@@ -117,6 +119,7 @@ namespace SMS
             this.SName.HeaderText = "姓名";
             this.SName.MinimumWidth = 6;
             this.SName.Name = "SName";
+            this.SName.ReadOnly = true;
             this.SName.Width = 125;
             // 
             // SSex
@@ -125,6 +128,7 @@ namespace SMS
             this.SSex.HeaderText = "性别";
             this.SSex.MinimumWidth = 6;
             this.SSex.Name = "SSex";
+            this.SSex.ReadOnly = true;
             this.SSex.Width = 125;
             // 
             // DeptName
@@ -133,6 +137,7 @@ namespace SMS
             this.DeptName.HeaderText = "所在学院";
             this.DeptName.MinimumWidth = 6;
             this.DeptName.Name = "DeptName";
+            this.DeptName.ReadOnly = true;
             this.DeptName.Width = 125;
             // 
             // SBirthday
@@ -141,6 +146,7 @@ namespace SMS
             this.SBirthday.HeaderText = "出生日期";
             this.SBirthday.MinimumWidth = 6;
             this.SBirthday.Name = "SBirthday";
+            this.SBirthday.ReadOnly = true;
             this.SBirthday.Width = 125;
             // 
             // Address
@@ -149,6 +155,7 @@ namespace SMS
             this.Address.HeaderText = "住址";
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
             this.Address.Width = 125;
             // 
             // panelStuSer
@@ -260,6 +267,33 @@ namespace SMS
             this.dataGridViewUnChoose.Size = new System.Drawing.Size(478, 238);
             this.dataGridViewUnChoose.TabIndex = 2;
             // 
+            // CNO2
+            // 
+            this.CNO2.DataPropertyName = "CNO";
+            this.CNO2.HeaderText = "课程编号";
+            this.CNO2.MinimumWidth = 6;
+            this.CNO2.Name = "CNO2";
+            this.CNO2.ReadOnly = true;
+            this.CNO2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "课程名称";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Credit";
+            this.dataGridViewTextBoxColumn3.HeaderText = "学分";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
             // splitter2
             // 
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -355,33 +389,6 @@ namespace SMS
             this.buttonSelected.Text = "选课";
             this.buttonSelected.UseVisualStyleBackColor = true;
             this.buttonSelected.Click += new System.EventHandler(this.buttonSelected_Click);
-            // 
-            // CNO2
-            // 
-            this.CNO2.DataPropertyName = "CNO";
-            this.CNO2.HeaderText = "课程编号";
-            this.CNO2.MinimumWidth = 6;
-            this.CNO2.Name = "CNO2";
-            this.CNO2.ReadOnly = true;
-            this.CNO2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "课程名称";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Credit";
-            this.dataGridViewTextBoxColumn3.HeaderText = "学分";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // FormSC
             // 

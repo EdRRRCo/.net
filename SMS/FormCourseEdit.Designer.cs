@@ -36,7 +36,7 @@ namespace SMS
             this.textBoxCNO = new System.Windows.Forms.TextBox();
             this.labelCNO = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxCredit = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonCancel
@@ -99,10 +99,11 @@ namespace SMS
             this.label1.TabIndex = 12;
             this.label1.Text = "学分";
             // 
-            // comboBoxCredit
+            // comboBox1
             // 
-            this.comboBoxCredit.FormattingEnabled = true;
-            this.comboBoxCredit.Items.AddRange(new object[] {
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0.5",
             "1",
             "1.5",
             "2",
@@ -114,17 +115,17 @@ namespace SMS
             "5",
             "5.5",
             "6"});
-            this.comboBoxCredit.Location = new System.Drawing.Point(288, 241);
-            this.comboBoxCredit.Name = "comboBoxCredit";
-            this.comboBoxCredit.Size = new System.Drawing.Size(121, 23);
-            this.comboBoxCredit.TabIndex = 13;
+            this.comboBox1.Location = new System.Drawing.Point(288, 241);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 13;
             // 
             // FormCourseEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 483);
-            this.Controls.Add(this.comboBoxCredit);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonYES);
@@ -133,6 +134,7 @@ namespace SMS
             this.Controls.Add(this.textBoxCNO);
             this.Controls.Add(this.labelCNO);
             this.Name = "FormCourseEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCourseEdit";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,6 +150,6 @@ namespace SMS
         private System.Windows.Forms.TextBox textBoxCNO;
         private System.Windows.Forms.Label labelCNO;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxCredit;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

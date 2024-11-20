@@ -116,6 +116,7 @@ namespace SMS
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 79);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -130,6 +131,7 @@ namespace SMS
             this.DeptNO.HeaderText = "学院代码";
             this.DeptNO.MinimumWidth = 6;
             this.DeptNO.Name = "DeptNO";
+            this.DeptNO.ReadOnly = true;
             this.DeptNO.Width = 130;
             // 
             // DeptName
@@ -138,6 +140,7 @@ namespace SMS
             this.DeptName.HeaderText = "学院名称";
             this.DeptName.MinimumWidth = 6;
             this.DeptName.Name = "DeptName";
+            this.DeptName.ReadOnly = true;
             this.DeptName.Width = 200;
             // 
             // contextMenuStrip1
