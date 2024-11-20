@@ -56,6 +56,16 @@ namespace studentMS.BLL
         }
 
         /// <summary>
+        /// 依据教师工号获取教师授课课程列表
+        /// </summary>
+        /// <param name="TNO">教师工号</param>
+        /// <returns></returns>
+        public DataSet GetList_TCSelected(string TNO)
+        {
+            return dal.GetList_TCSelected(TNO);
+        }
+
+        /// <summary>
         /// 依据SNO获取学生可选课程列表
         /// </summary>
         /// <param name="SNO"></param>
@@ -63,6 +73,16 @@ namespace studentMS.BLL
         public DataSet GetList_UnCourseSelected(string SNO)
         {
             return dal.GetList_UnCourseSelected(SNO);
+        }
+
+        /// <summary>
+        /// 依据教师工号获取非选择教师的授课课程
+        /// </summary>
+        /// <param name="TNO"></param>
+        /// <returns></returns>
+        public DataSet GetList_UnTeach(string TNO)
+        {
+            return dal.GetList_UnTeach(TNO);
         }
 
         /// <summary>

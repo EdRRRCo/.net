@@ -19,6 +19,8 @@ namespace SMS
             InitializeComponent();
         }
 
+
+
         private void MenuItemAdd_Click(object sender, EventArgs e)
         {
             //新增
@@ -50,8 +52,8 @@ namespace SMS
         private void MenuItemEdit_Click(object sender, EventArgs e)
         {
             //修改
-            //获取dataGridViewStu中当前所选中的记录的学号并保存到sno中
-            //索引超出范围，数组才会出现的错误，dataGridViewStu的seclectionMode改为整行选择
+            //获取dataGridView1中当前所选中的记录的课程编号并保存到cno中
+            //索引超出范围，数组才会出现的错误，dataGridView1的seclectionMode改为整行选择
             string cno = this.dataGridView1.SelectedRows[0].Cells["CNO"].Value.ToString();
 
 
@@ -74,13 +76,14 @@ namespace SMS
             if (MessageBox.Show(this, "您确定要删除您所选中的课程吗？\n", "删除确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 //从数据库中删除记录
-                studentMS.BLL.course bll = new studentMS.BLL.course();//实例化BLL层中的student类
+                studentMS.BLL.course bll = new studentMS.BLL.course();//实例化BLL层中的course类
 
-                //获取dataGridViewStu中选中的学号sno
-                string sno = this.dataGridView1.SelectedRows[0].Cells["CNO"].Value.ToString();
+
+                //获取dataGridView1中选中的课程编号cno
+                string cno = this.dataGridView1.SelectedRows[0].Cells["CNO"].Value.ToString();
                 try
                 {
-                    bll.Delete(sno);//物理删除
+                    bll.Delete(cno);//物理删除
                     MessageBox.Show(this, "删除成功！\n", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.buttonQuery_Click(this.buttonQuery, e);//调用查询功能实现刷新数据显示
                 }
@@ -90,6 +93,18 @@ namespace SMS
                     return;
                 }
             }
+        }
+
+        private void FormCourse_Load(object sender, EventArgs e)
+        {
+            studentMS.BLL.core core = new studentMS.BLL.core();//实例化BLL层
+
+            //判断当前登录用户是否拥有课程信息（增删改）的三项权限
+            rightAdd = core.haveRight("3101");
+            rightDelete = core.haveRight("3103");
+            rightEdit = core.haveRight("3102");
+
+            this.MenuItemAdd.Enabled = rightAdd;//新增
         }
 
         /// <summary>

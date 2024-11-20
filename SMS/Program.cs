@@ -17,7 +17,6 @@ namespace SMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
             //登录
             FormLogin login = new FormLogin();
             login.ShowDialog();

@@ -22,6 +22,7 @@ namespace SMS
             set { _cno = value; }
             get { return _cno; }
         }
+
         public FormCourseEdit()
         {
             InitializeComponent();
@@ -45,6 +46,9 @@ namespace SMS
                 strException += "课程编码不能为空!\n";
             if (this.textBoxCName.Text.Trim() == "")
                 strException += "课程名称不能为空!\n";
+            if (this.comboBox1.SelectedItem == null)
+                strException += "请选择一个学分值!\n";
+
             if (strException != "")
             {
                 MessageBox.Show(this, strException, "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -90,11 +94,6 @@ namespace SMS
 
         private void FormCourseEdit_Load(object sender, EventArgs e)
         {
-            //初始化学分下拉框
-            studentMS.BLL.course bllCourse = new studentMS.BLL.course();//实例化
-            this.comboBox1.DataSource = bllCourse.GetAllList().Tables[0];//设置ComboBox的数据源
-            this.comboBox1.DisplayMember = "Credit";//展示的文本所对应的数据库中的列名
-            this.comboBox1.ValueMember = "Credit";//下拉框对应的值
 
             if (_cno == "")//新增
             {
@@ -112,7 +111,7 @@ namespace SMS
                 {
                     this.textBoxCNO.Text = model.CNO;
                     this.textBoxCName.Text = model.CName;
-                    this.comboBox1.SelectedValue = model.Credit.ToString();
+                    this.comboBox1.Text = model.Credit.ToString();
                 }
             }
         }

@@ -31,14 +31,14 @@ namespace SMS
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewRole = new System.Windows.Forms.DataGridView();
+            this.RoleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripRoleEdit = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuItemStuAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemStuEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemStuDel = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSet = new System.Windows.Forms.ToolStripMenuItem();
-            this.RoleID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRole)).BeginInit();
             this.contextMenuStripRoleEdit.SuspendLayout();
             this.SuspendLayout();
@@ -60,47 +60,8 @@ namespace SMS
             this.dataGridViewRole.RowHeadersWidth = 51;
             this.dataGridViewRole.RowTemplate.Height = 27;
             this.dataGridViewRole.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewRole.Size = new System.Drawing.Size(626, 546);
+            this.dataGridViewRole.Size = new System.Drawing.Size(639, 546);
             this.dataGridViewRole.TabIndex = 0;
-            // 
-            // contextMenuStripRoleEdit
-            // 
-            this.contextMenuStripRoleEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.contextMenuStripRoleEdit.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStripRoleEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemStuAdd,
-            this.MenuItemStuEdit,
-            this.MenuItemStuDel,
-            this.toolStripMenuItemSet});
-            this.contextMenuStripRoleEdit.Name = "contextMenuStripStuEdit";
-            this.contextMenuStripRoleEdit.Size = new System.Drawing.Size(211, 128);
-            // 
-            // MenuItemStuAdd
-            // 
-            this.MenuItemStuAdd.Name = "MenuItemStuAdd";
-            this.MenuItemStuAdd.Size = new System.Drawing.Size(210, 24);
-            this.MenuItemStuAdd.Text = "新增";
-            // 
-            // MenuItemStuEdit
-            // 
-            this.MenuItemStuEdit.Enabled = false;
-            this.MenuItemStuEdit.Name = "MenuItemStuEdit";
-            this.MenuItemStuEdit.Size = new System.Drawing.Size(210, 24);
-            this.MenuItemStuEdit.Text = "修改";
-            // 
-            // MenuItemStuDel
-            // 
-            this.MenuItemStuDel.Enabled = false;
-            this.MenuItemStuDel.Name = "MenuItemStuDel";
-            this.MenuItemStuDel.Size = new System.Drawing.Size(210, 24);
-            this.MenuItemStuDel.Text = "删除";
-            // 
-            // toolStripMenuItemSet
-            // 
-            this.toolStripMenuItemSet.Name = "toolStripMenuItemSet";
-            this.toolStripMenuItemSet.Size = new System.Drawing.Size(210, 24);
-            this.toolStripMenuItemSet.Text = "权限设置";
-            this.toolStripMenuItemSet.Click += new System.EventHandler(this.toolStripMenuItemSet_Click);
             // 
             // RoleID
             // 
@@ -129,11 +90,50 @@ namespace SMS
             this.Status.ReadOnly = true;
             this.Status.Width = 125;
             // 
+            // contextMenuStripRoleEdit
+            // 
+            this.contextMenuStripRoleEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.contextMenuStripRoleEdit.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStripRoleEdit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemStuAdd,
+            this.MenuItemStuEdit,
+            this.MenuItemStuDel,
+            this.toolStripMenuItemSet});
+            this.contextMenuStripRoleEdit.Name = "contextMenuStripStuEdit";
+            this.contextMenuStripRoleEdit.Size = new System.Drawing.Size(139, 100);
+            // 
+            // MenuItemStuAdd
+            // 
+            this.MenuItemStuAdd.Name = "MenuItemStuAdd";
+            this.MenuItemStuAdd.Size = new System.Drawing.Size(138, 24);
+            this.MenuItemStuAdd.Text = "新增";
+            // 
+            // MenuItemStuEdit
+            // 
+            this.MenuItemStuEdit.Enabled = false;
+            this.MenuItemStuEdit.Name = "MenuItemStuEdit";
+            this.MenuItemStuEdit.Size = new System.Drawing.Size(138, 24);
+            this.MenuItemStuEdit.Text = "修改";
+            // 
+            // MenuItemStuDel
+            // 
+            this.MenuItemStuDel.Enabled = false;
+            this.MenuItemStuDel.Name = "MenuItemStuDel";
+            this.MenuItemStuDel.Size = new System.Drawing.Size(138, 24);
+            this.MenuItemStuDel.Text = "删除";
+            // 
+            // toolStripMenuItemSet
+            // 
+            this.toolStripMenuItemSet.Name = "toolStripMenuItemSet";
+            this.toolStripMenuItemSet.Size = new System.Drawing.Size(138, 24);
+            this.toolStripMenuItemSet.Text = "权限设置";
+            this.toolStripMenuItemSet.Click += new System.EventHandler(this.toolStripMenuItemSet_Click);
+            // 
             // FormRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 546);
+            this.ClientSize = new System.Drawing.Size(639, 546);
             this.Controls.Add(this.dataGridViewRole);
             this.Name = "FormRole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

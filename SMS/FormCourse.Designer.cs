@@ -159,26 +159,26 @@ namespace SMS
             this.MenuItemEdit,
             this.MenuItemDel});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 104);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 76);
             // 
             // MenuItemAdd
             // 
             this.MenuItemAdd.Name = "MenuItemAdd";
-            this.MenuItemAdd.Size = new System.Drawing.Size(210, 24);
+            this.MenuItemAdd.Size = new System.Drawing.Size(108, 24);
             this.MenuItemAdd.Text = "新增";
             this.MenuItemAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
             // 
             // MenuItemEdit
             // 
             this.MenuItemEdit.Name = "MenuItemEdit";
-            this.MenuItemEdit.Size = new System.Drawing.Size(210, 24);
+            this.MenuItemEdit.Size = new System.Drawing.Size(108, 24);
             this.MenuItemEdit.Text = "修改";
             this.MenuItemEdit.Click += new System.EventHandler(this.MenuItemEdit_Click);
             // 
             // MenuItemDel
             // 
             this.MenuItemDel.Name = "MenuItemDel";
-            this.MenuItemDel.Size = new System.Drawing.Size(210, 24);
+            this.MenuItemDel.Size = new System.Drawing.Size(108, 24);
             this.MenuItemDel.Text = "删除";
             this.MenuItemDel.Click += new System.EventHandler(this.MenuItemDel_Click);
             // 
@@ -193,6 +193,7 @@ namespace SMS
             this.Name = "FormCourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "课程信息";
+            this.Load += new System.EventHandler(this.FormCourse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -88,6 +88,12 @@
     <Compile Include="FormRole.Designer.cs">
       <DependentUpon>FormRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRoleEdit.Designer.cs">
+      <DependentUpon>FormRoleEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRoleRight.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="FormSC.Designer.cs">
       <DependentUpon>FormSC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormScoreCourseSta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormScoreCourseSta.Designer.cs">
+      <DependentUpon>FormScoreCourseSta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormScoreQuery.cs">
       <SubType>Form</SubType>
@@ -129,6 +141,12 @@
     </Compile>
     <Compile Include="FormStudentEdit.Designer.cs">
       <DependentUpon>FormStudentEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTC.Designer.cs">
+      <DependentUpon>FormTC.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTeacher.cs">
       <SubType>Form</SubType>
@@ -177,6 +195,9 @@
     <EmbeddedResource Include="FormSC.resx">
       <DependentUpon>FormSC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormScoreCourseSta.resx">
+      <DependentUpon>FormScoreCourseSta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormScoreQuery.resx">
       <DependentUpon>FormScoreQuery.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStudentEdit.resx">
       <DependentUpon>FormStudentEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTC.resx">
+      <DependentUpon>FormTC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTeacher.resx">
       <DependentUpon>FormTeacher.cs</DependentUpon>

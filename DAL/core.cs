@@ -85,6 +85,20 @@ namespace studentMS.DAL
         }
 
         /// <summary>
+        /// 依据教师工号获取教师授课课程列表
+        /// </summary>
+        /// <param name="TNO">教师工号</param>
+        /// <returns></returns>
+        public DataSet GetList_TCSelected(string TNO)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT CNO,CName,Credit FROM course ");
+            strSql.Append(" where CNO in (select CNO from t_c where TNO = '" + TNO + " ')");
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+        /// <summary>
         /// 依据学号SNO获取学生可选课程列表
         /// </summary>
         /// <param name="SNO"></param>
@@ -94,6 +108,21 @@ namespace studentMS.DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT CNO,CName,Credit FROM course ");
             strSql.Append(" where CNO not in (select CNO from s_c where SNO = '" + SNO + " ')");
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+        
+        /// <summary>
+        /// 依据教师工号获取非选择教师的授课课程
+        /// </summary>
+        /// <param name="TNO"></param>
+        /// <returns></returns>
+        public DataSet GetList_UnTeach(string TNO)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT CNO,CName,Credit FROM course ");
+            strSql.Append(" where CNO not in (select CNO from t_c where TNO = '" + TNO + " ')");
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
@@ -178,6 +207,26 @@ namespace studentMS.DAL
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
+        ///// <summary>
+        ///// 依据课程名称获取课程的成绩情况
+        ///// </summary>
+        ///// <param name="CName"></param>
+        ///// <returns></returns>
+        //public DataSet GetList_ScoreCourseSta(string CName)
+        //{
+        //    StringBuilder strSql = new StringBuilder();
+        //    strSql.Append("SELECT a.CNO,b.CName, ");
+        //    strSql.Append(" Max(Score) as ScoreMax,Min(Score) as ScoreMin, avg(Score) as ScoreAvg ");
+        //    strSql.Append(" FROM student.s_c a,course b ");
+
+        //    if (!(CName != null || CName == ""))
+        //        strSql.Append(" where a.CNO in(select CNO from course where CName like '%" + CName + "%')");
+        //    strSql.Append(" group by a.SNO,b.SName,b.SSex; ");
+
+
+        //    return DbHelperMySQL.Query(strSql.ToString());
+        //}
+
         /// <summary>
         /// 依据RoleID获取当前系统所有权限以及该角色以拥有的权限
         /// </summary>
@@ -244,5 +293,6 @@ namespace studentMS.DAL
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
+
     }
 }

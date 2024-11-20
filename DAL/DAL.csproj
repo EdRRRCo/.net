@@ -132,6 +132,7 @@
     <Compile Include="student.cs" />
     <Compile Include="s_c.cs" />
     <Compile Include="teacher.cs" />
+    <Compile Include="t_c.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -98,6 +98,7 @@ namespace SMS
             this.MenuItem11.Name = "MenuItem11";
             this.MenuItem11.Size = new System.Drawing.Size(152, 26);
             this.MenuItem11.Text = "重新登录";
+            this.MenuItem11.Click += new System.EventHandler(this.MenuItem11_Click);
             // 
             // toolStripSeparator1
             // 
@@ -109,6 +110,7 @@ namespace SMS
             this.MenuItem12.Name = "MenuItem12";
             this.MenuItem12.Size = new System.Drawing.Size(152, 26);
             this.MenuItem12.Text = "安全退出";
+            this.MenuItem12.Click += new System.EventHandler(this.MenuItem12_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -153,26 +155,26 @@ namespace SMS
             // MenuItem21
             // 
             this.MenuItem21.Name = "MenuItem21";
-            this.MenuItem21.Size = new System.Drawing.Size(152, 26);
+            this.MenuItem21.Size = new System.Drawing.Size(224, 26);
             this.MenuItem21.Text = "学院信息";
             this.MenuItem21.Click += new System.EventHandler(this.MenuItem21_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
             // 
             // MenuItem22
             // 
             this.MenuItem22.Name = "MenuItem22";
-            this.MenuItem22.Size = new System.Drawing.Size(152, 26);
+            this.MenuItem22.Size = new System.Drawing.Size(224, 26);
             this.MenuItem22.Text = "学生档案";
             this.MenuItem22.Click += new System.EventHandler(this.MenuItem22_Click);
             // 
             // MenuItem23
             // 
             this.MenuItem23.Name = "MenuItem23";
-            this.MenuItem23.Size = new System.Drawing.Size(152, 26);
+            this.MenuItem23.Size = new System.Drawing.Size(224, 26);
             this.MenuItem23.Text = "教师档案";
             this.MenuItem23.Click += new System.EventHandler(this.MenuItem23_Click);
             // 
@@ -211,6 +213,7 @@ namespace SMS
             this.MenuItem33.Name = "MenuItem33";
             this.MenuItem33.Size = new System.Drawing.Size(224, 26);
             this.MenuItem33.Text = "教师授课";
+            this.MenuItem33.Click += new System.EventHandler(this.MenuItem33_Click);
             // 
             // MenuItem4
             // 
