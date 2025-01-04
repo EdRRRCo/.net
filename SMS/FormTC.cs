@@ -23,15 +23,18 @@ namespace SMS
             this.dataGridViewTea.DataSource = bll.GetList_Teacher(this.textBoxTNO.Text.Trim(), this.textBoxTName.Text.Trim()).Tables[0].DefaultView;
         }
 
+        //选课界面刷新
         private void dataGridViewTea_SelectionChanged(object sender, EventArgs e)
         {
             if (this.dataGridViewTea.Rows.Count <= 0)
                 return;
             //获取当前被选中的教师的工号
             string tno = dataGridViewTea.CurrentRow.Cells["TNO"].Value.ToString();
+
             //调用BLL层的方法获取工号为tno的教师的授课课程
             studentMS.BLL.core bll = new studentMS.BLL.core();
             this.dataGridViewChoosed.DataSource = bll.GetList_TCSelected(tno).Tables[0].DefaultView;
+            
             //调用BLL层的方法获取非工号为tno的教师的授课课程
             this.dataGridViewUnChoose.DataSource = bll.GetList_UnTeach(tno).Tables[0].DefaultView;
 
@@ -40,30 +43,51 @@ namespace SMS
             this.buttonNO.Enabled = this.dataGridViewChoosed.Rows.Count > 0;
         }
 
-        ////选择授课课程
-        //private void buttonSelected_Click(object sender, EventArgs e)
-        //{
-        //    //获取教师工号
-        //    string tno = this.dataGridViewTea.CurrentRow.Cells["TNO"].Value.ToString();
-        //    //课程编号
-        //    string cno = this.dataGridViewUnChoose.CurrentRow.Cells["CNO2"].Value.ToString();
-        //    //
-        //    studentMS.Model.t_c model = new studentMS.Model.t_c();
-        //    model.TNO = tno;//工号
-        //    model.CNO = cno;//课程编号
-        //    /*    model.Score = DBNull;*/
+        //选课
+        private void buttonSelected_Click(object sender, EventArgs e)
+        {
+            //获取工号
+            string tno = this.dataGridViewTea.CurrentRow.Cells["TNO"].Value.ToString();
+            //课程编号
+            string cno = this.dataGridViewUnChoose.CurrentRow.Cells["CNO2"].Value.ToString();
+            //
+            studentMS.Model.t_c model = new studentMS.Model.t_c();
+            model.TNO = tno;//工号
+            model.CNO = cno;//课程编号
+            /*    model.Score = DBNull;*/
 
-        //    studentMS.BLL.s_c bll = new studentMS.BLL.s_c();
-        //    try
-        //    {
-        //        bll.Add(model);//新增选课记录
-        //        this.dataGridViewTea_SelectionChanged(this.dataGridViewTea, e);//调用SelectionChanged事件刷新数据显示
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(this, "选课出错！\n" + ex.Message, "出错啦", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    }
-        //}
+            studentMS.BLL.t_c bll = new studentMS.BLL.t_c();
+            try
+            {
+                bll.Add(model);//新增选课记录
+                this.dataGridViewTea_SelectionChanged(this.dataGridViewTea, e);//调用SelectionChanged事件刷新数据显示
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "选课出错！\n" + ex.Message, "出错啦", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //退选
+        private void buttonNO_Click(object sender, EventArgs e)
+        {
+            string tno = this.dataGridViewTea.CurrentRow.Cells["TNO"].Value.ToString();
+            string cno = this.dataGridViewChoosed.CurrentRow.Cells["CNO"].Value.ToString();
+
+            studentMS.BLL.t_c bll = new studentMS.BLL.t_c();
+
+            try
+            {
+                bll.Delete(tno, cno);//删除选课记录
+                this.dataGridViewTea_SelectionChanged(this.dataGridViewTea, e);//调用SelectionChanged事件刷新数据显示
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "退选出错！\n" + ex.Message, "出错啦", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
     }
 }

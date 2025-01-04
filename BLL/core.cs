@@ -130,6 +130,16 @@ namespace studentMS.BLL
         }
 
         /// <summary>
+        /// 依据课程名称获取课程的成绩情况
+        /// </summary>
+        /// <param name="CName"></param>
+        /// <returns></returns>
+        public DataSet GetList_ScoreCourseSta(string CName)
+        {
+            return dal.GetList_ScoreCourseSta(CName);
+        }
+
+        /// <summary>
         /// 依据RoleID获取当前系统所有权限以及该角色以拥有的权限
         /// </summary>
         /// <param name="RoleID">角色ID</param>

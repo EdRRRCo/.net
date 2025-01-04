@@ -19,7 +19,8 @@ namespace SMS
 
         private void buttonQueryScore_Click(object sender, EventArgs e)
         {
-
+            studentMS.BLL.core bll = new studentMS.BLL.core();
+            this.dataGridViewCo.DataSource = bll.GetList_ScoreCourseSta(this.textBox1.Text.Trim()).Tables[0].DefaultView;
         }
     }
 

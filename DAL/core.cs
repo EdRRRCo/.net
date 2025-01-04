@@ -11,7 +11,7 @@ namespace studentMS.DAL
 		{}
 
         /// <summary>
-        /// ÒÀ¾ÝÑ§ºÅºÍÐÕÃû²éÑ¯ËùÂú×ãÌõ¼þµÄÑ§ÉúÐÅÏ¢ÁÐ±í
+        /// ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½Åºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ð±ï¿½
         /// </summary>
         /// <param name="SNO"></param>
         /// <param name="SName"></param>
@@ -31,7 +31,7 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ÒÀ¾Ý¹¤ºÅºÍÐÕÃû²éÑ¯ËùÂú×ãµÄÀÏÊ¦ÐÅÏ¢ÁÐ±í
+        /// ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½Åºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¦ï¿½ï¿½Ï¢ï¿½Ð±ï¿½
         /// </summary>
         /// <param name="TNO"></param>
         /// <param name="TName"></param>
@@ -51,7 +51,7 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ÒÀ¾Ý¿Î³Ì±àºÅºÍ¿Î³ÌÃû³Æ²éÑ¯ËùÂú×ãµÄ¿Î³ÌÐÅÏ¢ÁÐ±í
+        /// ï¿½ï¿½ï¿½Ý¿Î³Ì±ï¿½ÅºÍ¿Î³ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Î³ï¿½ï¿½ï¿½Ï¢ï¿½Ð±ï¿½
         /// </summary>
         /// <param name="CNO"></param>
         /// <param name="CName"></param>
@@ -71,7 +71,7 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ÒÀ¾ÝÑ§ºÅSNO»ñÈ¡Ñ§ÉúÒÑÑ¡¿Î³ÌÁÐ±í
+        /// ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½SNOï¿½ï¿½È¡Ñ§ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Î³ï¿½ï¿½Ð±ï¿½
         /// </summary>
         /// <param name="SNO"></param>
         /// <returns></returns>
@@ -85,21 +85,25 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ÒÀ¾Ý½ÌÊ¦¹¤ºÅ»ñÈ¡½ÌÊ¦ÊÚ¿Î¿Î³ÌÁÐ±í
+        /// ï¿½ï¿½ï¿½Ý½ï¿½Ê¦ï¿½ï¿½ï¿½Å»ï¿½È¡ï¿½ï¿½Ê¦ï¿½Ú¿Î¿Î³ï¿½ï¿½Ð±ï¿½
         /// </summary>
-        /// <param name="TNO">½ÌÊ¦¹¤ºÅ</param>
+        /// <param name="TNO">ï¿½ï¿½Ê¦ï¿½ï¿½ï¿½ï¿½</param>
         /// <returns></returns>
         public DataSet GetList_TCSelected(string TNO)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT CNO,CName,Credit FROM course ");
-            strSql.Append(" where CNO in (select CNO from t_c where TNO = '" + TNO + " ')");
+            strSql.Append(" where CNO in (select CNO from t_c where TNO = @TNO)");
+            MySqlParameter[] parameters = {
+                new MySqlParameter("@TNO", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = TNO;
 
-            return DbHelperMySQL.Query(strSql.ToString());
+            return DbHelperMySQL.Query(strSql.ToString(), parameters);
         }
 
         /// <summary>
-        /// ÒÀ¾ÝÑ§ºÅSNO»ñÈ¡Ñ§Éú¿ÉÑ¡¿Î³ÌÁÐ±í
+        /// ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½SNOï¿½ï¿½È¡Ñ§ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½Î³ï¿½ï¿½Ð±ï¿½
         /// </summary>
         /// <param name="SNO"></param>
         /// <returns></returns>
@@ -114,7 +118,7 @@ namespace studentMS.DAL
 
         
         /// <summary>
-        /// ÒÀ¾Ý½ÌÊ¦¹¤ºÅ»ñÈ¡·ÇÑ¡Ôñ½ÌÊ¦µÄÊÚ¿Î¿Î³Ì
+        /// ï¿½ï¿½ï¿½Ý½ï¿½Ê¦ï¿½ï¿½ï¿½Å»ï¿½È¡ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ê¦ï¿½ï¿½ï¿½Ú¿Î¿Î³ï¿½
         /// </summary>
         /// <param name="TNO"></param>
         /// <returns></returns>
@@ -122,15 +126,19 @@ namespace studentMS.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT CNO,CName,Credit FROM course ");
-            strSql.Append(" where CNO not in (select CNO from t_c where TNO = '" + TNO + " ')");
+            strSql.Append(" where CNO not in (select CNO from t_c where TNO = @TNO)");
+            MySqlParameter[] parameters = {
+                new MySqlParameter("@TNO", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = TNO;
 
-            return DbHelperMySQL.Query(strSql.ToString());
+            return DbHelperMySQL.Query(strSql.ToString(), parameters);
         }
 
         /// <summary>
-        /// ÒÀ¾Ý¿Î³Ì±àºÅ»ñÈ¡Ñ¡ÁË¸Ã¿Î³ÌµÄÑ§ÉúµÄÑ§ºÅ¡¢ÐÕÃûºÍ³É¼¨
+        /// ï¿½ï¿½ï¿½Ý¿Î³Ì±ï¿½Å»ï¿½È¡Ñ¡ï¿½Ë¸Ã¿Î³Ìµï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½Å¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³É¼ï¿½
         /// </summary>
-        /// <param name="CNO">¿Î³Ì±àºÅ</param>
+        /// <param name="CNO">ï¿½Î³Ì±ï¿½ï¿½</param>
         /// <returns>DataSet</returns>
         public DataSet GetList_Score(string CNO)
         {
@@ -142,11 +150,11 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ÒÀ¾ÝÑ§ºÅÐÕÃû¿Î³ÌÃû³ÆÄ£ºý²éÑ¯Âú×ãÌõ¼þµÄ³É¼¨¼ÇÂ¼
+        /// ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î³ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³É¼ï¿½ï¿½ï¿½Â¼
         /// </summary>
-        /// <param name="SNO">Ñ§ºÅ</param>
-        /// <param name="SName">ÐÕÃû</param>
-        /// <param name="CName">¿Î³ÌÃû³Æ</param>
+        /// <param name="SNO">Ñ§ï¿½ï¿½</param>
+        /// <param name="SName">ï¿½ï¿½ï¿½ï¿½</param>
+        /// <param name="CName">ï¿½Î³ï¿½ï¿½ï¿½ï¿½ï¿½</param>
         /// <returns></returns>
         public DataSet GetList_Score2(string SNO,string SName,string CName)
         {
@@ -166,10 +174,10 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ÒÀ¾ÝÑ§Ôº´úÂëºÍÑ§ÔºÃû³ÆÄ£ºý²éÑ¯Ñ§ÔºÐÅÏ¢
+        /// ï¿½ï¿½ï¿½ï¿½Ñ§Ôºï¿½ï¿½ï¿½ï¿½ï¿½Ñ§Ôºï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ñ¯Ñ§Ôºï¿½ï¿½Ï¢
         /// </summary>
-        /// <param name="DeptNO">Ñ§Ôº´úÂë</param>
-        /// <param name="DeptName">Ñ§ÔºÃû³Æ</param>
+        /// <param name="DeptNO">Ñ§Ôºï¿½ï¿½ï¿½ï¿½</param>
+        /// <param name="DeptName">Ñ§Ôºï¿½ï¿½ï¿½ï¿½</param>
         /// <returns></returns>
         public DataSet GetList_Dept(string DeptNO,string DeptName)
         {
@@ -188,7 +196,7 @@ namespace studentMS.DAL
 
 
         /// <summary>
-        /// ÒÀ¾Ý¿Î³ÌÃû³Æ»ñÈ¡Ñ§Éú³É¼¨Çé¿ö
+        /// ï¿½ï¿½ï¿½Ý¿Î³ï¿½ï¿½ï¿½ï¿½Æ»ï¿½È¡Ñ§ï¿½ï¿½ï¿½É¼ï¿½ï¿½ï¿½ï¿½
         /// </summary>
         /// <param name="CName"></param>
         /// <returns></returns>
@@ -199,6 +207,27 @@ namespace studentMS.DAL
             strSql.Append(" Max(Score) as ScoreMax,Min(Score) as ScoreMin, avg(Score) as ScoreAvg ");
             strSql.Append(" FROM student.s_c a,student b ");
 
+            if (!string.IsNullOrEmpty(CName))
+                strSql.Append(" where a.CNO in(select CNO from course where CName like '%" + CName + "%')");
+            strSql.Append(" group by a.SNO,b.SName,b.SSex; ");
+
+
+            return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+        /// <summary>
+        /// ï¿½ï¿½ï¿½Ý¿Î³ï¿½ï¿½ï¿½ï¿½Æ»ï¿½È¡ï¿½Î³ÌµÄ³É¼ï¿½ï¿½ï¿½ï¿½
+        /// </summary>
+        /// <param name="CName"></param>
+        /// <returns></returns>
+        public DataSet GetList_ScoreCourseSta(string CName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT a.CNO,b.CName, ");
+            strSql.Append(" Max(Score) as ScoreMax,Min(Score) as ScoreMin, avg(Score) as ScoreAvg ");
+            strSql.Append(" FROM student.s_c a");
+            strSql.Append(" JOIN student b ON a.SNO = b.SNO ");
+
             if (!(CName != null || CName == ""))
                 strSql.Append(" where a.CNO in(select CNO from course where CName like '%" + CName + "%')");
             strSql.Append(" group by a.SNO,b.SName,b.SSex; ");
@@ -207,30 +236,10 @@ namespace studentMS.DAL
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
-        ///// <summary>
-        ///// ÒÀ¾Ý¿Î³ÌÃû³Æ»ñÈ¡¿Î³ÌµÄ³É¼¨Çé¿ö
-        ///// </summary>
-        ///// <param name="CName"></param>
-        ///// <returns></returns>
-        //public DataSet GetList_ScoreCourseSta(string CName)
-        //{
-        //    StringBuilder strSql = new StringBuilder();
-        //    strSql.Append("SELECT a.CNO,b.CName, ");
-        //    strSql.Append(" Max(Score) as ScoreMax,Min(Score) as ScoreMin, avg(Score) as ScoreAvg ");
-        //    strSql.Append(" FROM student.s_c a,course b ");
-
-        //    if (!(CName != null || CName == ""))
-        //        strSql.Append(" where a.CNO in(select CNO from course where CName like '%" + CName + "%')");
-        //    strSql.Append(" group by a.SNO,b.SName,b.SSex; ");
-
-
-        //    return DbHelperMySQL.Query(strSql.ToString());
-        //}
-
         /// <summary>
-        /// ÒÀ¾ÝRoleID»ñÈ¡µ±Ç°ÏµÍ³ËùÓÐÈ¨ÏÞÒÔ¼°¸Ã½ÇÉ«ÒÔÓµÓÐµÄÈ¨ÏÞ
+        /// ï¿½ï¿½ï¿½ï¿½RoleIDï¿½ï¿½È¡ï¿½ï¿½Ç°ÏµÍ³ï¿½ï¿½ï¿½ï¿½È¨ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ã½ï¿½É«ï¿½ï¿½Óµï¿½Ðµï¿½È¨ï¿½ï¿½
         /// </summary>
-        /// <param name="RoleID">½ÇÉ«ID</param>
+        /// <param name="RoleID">ï¿½ï¿½É«ID</param>
         /// <returns></returns>
         public DataSet GetList_RoleRight(string RoleID)
         {
@@ -243,9 +252,9 @@ namespace studentMS.DAL
             
 
         /// <summary>
-        /// ÒÀ¾ÝuidÄ£ºý²éÑ¯·ûºÏÌõ¼þµÄÊý¾Ý¼¯
+        /// ï¿½ï¿½ï¿½ï¿½uidÄ£ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½
         /// </summary>
-        /// <param name="UID">ÓÃ»§Ãû</param>
+        /// <param name="UID">ï¿½Ã»ï¿½ï¿½ï¿½</param>
         /// <returns></returns>
         public DataSet GetList_User(string UID)
         {
@@ -263,10 +272,10 @@ namespace studentMS.DAL
 
 
         /// <summary>
-        /// ÒÀ¾ÝÓÃ»§ÃûºÍÃÜÂë²éÑ¯¸ÃÓÃ»§ÊÇ·ñ´æÔÚ
+        /// ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
         /// </summary>
-        /// <param name="UID">ÓÃ»§Ãû</param>
-        /// <param name="UCode">ÃÜÂë</param>
+        /// <param name="UID">ï¿½Ã»ï¿½ï¿½ï¿½</param>
+        /// <param name="UCode">ï¿½ï¿½ï¿½ï¿½</param>
         /// <returns></returns>
         public bool ExistUIDUCode(string UID, string UCode)
         {
@@ -281,7 +290,7 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// »ñÈ¡ÓÃ»§userµÄÈ¨ÏÞÁÐ±í
+        /// ï¿½ï¿½È¡ï¿½Ã»ï¿½userï¿½ï¿½È¨ï¿½ï¿½ï¿½Ð±ï¿½
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
@@ -292,6 +301,21 @@ namespace studentMS.DAL
             strSql.Append(" where RoleID in (select RoleID from b_user where UID ='"+ user +"')");
 
             return DbHelperMySQL.Query(strSql.ToString());
+        }
+
+        public bool SelectCourse(string TNO, string CNO)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("INSERT INTO t_c (TNO, CNO) VALUES (@TNO, @CNO)");
+            MySqlParameter[] parameters = {
+                new MySqlParameter("@TNO", MySqlDbType.VarChar),
+                new MySqlParameter("@CNO", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = TNO;
+            parameters[1].Value = CNO;
+
+            int rows = DbHelperMySQL.ExecuteSql(strSql.ToString(), parameters);
+            return rows > 0;
         }
 
     }

@@ -29,75 +29,37 @@ namespace SMS
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.buttonQueryScore = new System.Windows.Forms.Button();
+            this.dataGridViewCo = new System.Windows.Forms.DataGridView();
             this.CNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScoreMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScoreMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScoreAvg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonQueryScore = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewCo
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCo.AllowUserToAddRows = false;
+            this.dataGridViewCo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CNO,
             this.CName,
             this.ScoreMax,
             this.ScoreMin,
             this.ScoreAvg});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 66);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(781, 385);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.buttonQueryScore);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(781, 66);
-            this.panel1.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(134, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 25);
-            this.textBox1.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "课程名称";
-            // 
-            // buttonQueryScore
-            // 
-            this.buttonQueryScore.Location = new System.Drawing.Point(369, 15);
-            this.buttonQueryScore.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonQueryScore.Name = "buttonQueryScore";
-            this.buttonQueryScore.Size = new System.Drawing.Size(93, 40);
-            this.buttonQueryScore.TabIndex = 12;
-            this.buttonQueryScore.Text = "查  询";
-            this.buttonQueryScore.UseVisualStyleBackColor = true;
-            this.buttonQueryScore.Click += new System.EventHandler(this.buttonQueryScore_Click);
+            this.dataGridViewCo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewCo.Location = new System.Drawing.Point(0, 66);
+            this.dataGridViewCo.Name = "dataGridViewCo";
+            this.dataGridViewCo.RowHeadersWidth = 51;
+            this.dataGridViewCo.RowTemplate.Height = 27;
+            this.dataGridViewCo.Size = new System.Drawing.Size(781, 385);
+            this.dataGridViewCo.TabIndex = 4;
             // 
             // CNO
             // 
@@ -139,16 +101,54 @@ namespace SMS
             this.ScoreAvg.Name = "ScoreAvg";
             this.ScoreAvg.Width = 125;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.buttonQueryScore);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(781, 66);
+            this.panel1.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(134, 25);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(185, 25);
+            this.textBox1.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(61, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "课程名称";
+            // 
+            // buttonQueryScore
+            // 
+            this.buttonQueryScore.Location = new System.Drawing.Point(369, 15);
+            this.buttonQueryScore.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonQueryScore.Name = "buttonQueryScore";
+            this.buttonQueryScore.Size = new System.Drawing.Size(93, 40);
+            this.buttonQueryScore.TabIndex = 12;
+            this.buttonQueryScore.Text = "查  询";
+            this.buttonQueryScore.UseVisualStyleBackColor = true;
+            this.buttonQueryScore.Click += new System.EventHandler(this.buttonQueryScore_Click);
+            // 
             // FormScoreCourseSta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 451);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewCo);
             this.Controls.Add(this.panel1);
             this.Name = "FormScoreCourseSta";
             this.Text = "成绩统计-课程";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -157,7 +157,7 @@ namespace SMS
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewCo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
