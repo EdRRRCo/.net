@@ -57,7 +57,6 @@ namespace SMS
             this.textBoxUID.Name = "textBoxUID";
             this.textBoxUID.Size = new System.Drawing.Size(210, 28);
             this.textBoxUID.TabIndex = 1;
-            this.textBoxUID.Text = "admin";
             // 
             // textBoxUCode
             // 
@@ -67,7 +66,6 @@ namespace SMS
             this.textBoxUCode.PasswordChar = '*';
             this.textBoxUCode.Size = new System.Drawing.Size(210, 28);
             this.textBoxUCode.TabIndex = 3;
-            this.textBoxUCode.Text = "admin";
             // 
             // labelUCode
             // 

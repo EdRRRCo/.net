@@ -58,7 +58,7 @@ namespace SMS
             this.dataGridViewCo.Name = "dataGridViewCo";
             this.dataGridViewCo.RowHeadersWidth = 51;
             this.dataGridViewCo.RowTemplate.Height = 27;
-            this.dataGridViewCo.Size = new System.Drawing.Size(781, 385);
+            this.dataGridViewCo.Size = new System.Drawing.Size(929, 470);
             this.dataGridViewCo.TabIndex = 4;
             // 
             // CNO
@@ -109,7 +109,7 @@ namespace SMS
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(781, 66);
+            this.panel1.Size = new System.Drawing.Size(929, 66);
             this.panel1.TabIndex = 3;
             // 
             // textBox1
@@ -143,10 +143,11 @@ namespace SMS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 451);
+            this.ClientSize = new System.Drawing.Size(929, 536);
             this.Controls.Add(this.dataGridViewCo);
             this.Controls.Add(this.panel1);
             this.Name = "FormScoreCourseSta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "成绩统计-课程";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCo)).EndInit();
             this.panel1.ResumeLayout(false);

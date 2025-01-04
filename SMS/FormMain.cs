@@ -112,5 +112,19 @@ namespace SMS
             temp.MdiParent = this;//设置父窗体
             temp.Show();//调用方法Show把窗体展示到界面
         }
+
+        private void MenuItem71_Click(object sender, EventArgs e)
+        {
+            FormTutorial temp = new FormTutorial();//实例化
+            temp.MdiParent = this;//设置父窗体
+            temp.Show();//调用方法Show把窗体展示到界面
+        }
+
+        private void MenuItem72_Click(object sender, EventArgs e)
+        {
+            FormFAQ temp = new FormFAQ();//实例化
+            temp.MdiParent = this;//设置父窗体
+            temp.Show();//调用方法Show把窗体展示到界面
+        }
     }
 }

@@ -117,25 +117,148 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TNO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TSex.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Address.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Tel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Tstatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>学生管理系统（SMS）使用手册
+
+1. 软件简介
+
+学生管理系统（Student Management System，简称 SMS）是一款基于 Windows Forms 的桌面应用，主要用于管理学生信息、课程成绩以及统计分析。
+
+2. 安装指南
+
+2.1 系统要求
+
+操作系统：Windows 10 / 11
+
+.NET Framework 4.5 及以上
+
+MySQL 数据库（需提前安装并配置）
+
+2.2 安装步骤
+
+下载 SMS 安装包，解压到指定目录。
+
+双击 setup.exe 运行安装程序。
+
+按照安装向导完成安装。
+
+运行 SMS.exe 启动程序。
+
+3. 功能介绍
+
+3.1 登录与用户管理
+
+用户可使用管理员账号登录系统。
+
+具备权限管理功能，不同用户拥有不同权限。
+
+3.2 学生信息管理
+
+添加、修改、删除学生信息。
+
+查询学生的基本资料。
+
+3.2 教师信息管理
+
+添加、修改、删除教师信息。
+
+查询教师的基本资料。
+
+3.3 学院信息管理
+
+添加、修改、删除学院信息。
+
+3.4 课程管理
+
+录入课程信息。
+
+课程分类及课程安排。
+
+3.5 学生选课
+
+学生选课与退选。
+
+3.6 教师授课
+
+教师授课与退选。
+
+3.7 成绩管理
+
+录入学生成绩。
+
+按课程或学生查询成绩。
+
+3.8 统计分析
+
+最高分、最低分、平均分统计。
+
+课程成绩对比。
+
+4. 操作指南
+
+4.1 登录系统
+
+启动 SMS 程序。
+
+输入用户名和密码，点击“登录”。
+
+4.2 学生信息管理
+
+进入“学生管理”模块。
+
+点击“添加”按钮，输入学生信息，点击“保存”。
+
+选中某个学生，点击“修改”编辑信息。
+
+选中某个学生，点击“删除”移除记录。
+
+4.3 课程管理
+
+进入“课程管理”模块。
+
+点击“添加”按钮录入新课程。
+
+点击“查询”可搜索课程信息。
+
+4.4 成绩管理
+
+进入“成绩管理”模块。
+
+选择学生，输入成绩并保存。
+
+通过“查询”按钮按学生或课程筛选成绩。
+
+4.5 统计分析
+
+进入“统计分析”模块。
+
+选择课程，查看最高、最低、平均分统计。
+
+5. 常见问题
+
+5.1 登录失败怎么办？
+
+确保用户名和密码输入正确。
+
+管理员可重置用户密码。
+
+5.2 数据无法保存？
+
+确保数据库连接正常。
+
+检查是否有权限操作数据库。
+
+6. 维护与更新
+
+定期备份数据库。
+
+关注官方更新，下载最新版本修复 Bug。
+
+7. 联系方式
+
+开发团队：软件工程12204任芩卉
+
+技术支持邮箱：support@wtu.com
+</value>
+  </data>
 </root>

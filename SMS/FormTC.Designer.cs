@@ -32,6 +32,9 @@ namespace SMS
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewUnChoose = new System.Windows.Forms.DataGridView();
+            this.CNO2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitter2 = new System.Windows.Forms.Splitter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewChoosed = new System.Windows.Forms.DataGridView();
@@ -56,9 +59,6 @@ namespace SMS
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxTNO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.CNO2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CName2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Credit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUnChoose)).BeginInit();
@@ -78,7 +78,7 @@ namespace SMS
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(463, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(430, 526);
+            this.panel2.Size = new System.Drawing.Size(462, 551);
             this.panel2.TabIndex = 5;
             // 
             // groupBox2
@@ -87,7 +87,7 @@ namespace SMS
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 289);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(430, 237);
+            this.groupBox2.Size = new System.Drawing.Size(462, 262);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "非此教师授课课程";
@@ -107,15 +107,42 @@ namespace SMS
             this.dataGridViewUnChoose.RowHeadersWidth = 51;
             this.dataGridViewUnChoose.RowTemplate.Height = 27;
             this.dataGridViewUnChoose.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUnChoose.Size = new System.Drawing.Size(424, 213);
+            this.dataGridViewUnChoose.Size = new System.Drawing.Size(456, 238);
             this.dataGridViewUnChoose.TabIndex = 2;
+            // 
+            // CNO2
+            // 
+            this.CNO2.DataPropertyName = "CNO";
+            this.CNO2.HeaderText = "课程编号";
+            this.CNO2.MinimumWidth = 6;
+            this.CNO2.Name = "CNO2";
+            this.CNO2.ReadOnly = true;
+            this.CNO2.Width = 125;
+            // 
+            // CName2
+            // 
+            this.CName2.DataPropertyName = "CName";
+            this.CName2.HeaderText = "课程名称";
+            this.CName2.MinimumWidth = 6;
+            this.CName2.Name = "CName2";
+            this.CName2.ReadOnly = true;
+            this.CName2.Width = 125;
+            // 
+            // Credit2
+            // 
+            this.Credit2.DataPropertyName = "Credit";
+            this.Credit2.HeaderText = "学分";
+            this.Credit2.MinimumWidth = 6;
+            this.Credit2.Name = "Credit2";
+            this.Credit2.ReadOnly = true;
+            this.Credit2.Width = 125;
             // 
             // splitter2
             // 
             this.splitter2.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter2.Location = new System.Drawing.Point(0, 286);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(430, 3);
+            this.splitter2.Size = new System.Drawing.Size(462, 3);
             this.splitter2.TabIndex = 1;
             this.splitter2.TabStop = false;
             // 
@@ -126,7 +153,7 @@ namespace SMS
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(430, 286);
+            this.groupBox1.Size = new System.Drawing.Size(462, 286);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "授课课程";
@@ -146,7 +173,7 @@ namespace SMS
             this.dataGridViewChoosed.RowHeadersWidth = 51;
             this.dataGridViewChoosed.RowTemplate.Height = 27;
             this.dataGridViewChoosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewChoosed.Size = new System.Drawing.Size(424, 213);
+            this.dataGridViewChoosed.Size = new System.Drawing.Size(456, 213);
             this.dataGridViewChoosed.TabIndex = 1;
             // 
             // CNO
@@ -183,7 +210,7 @@ namespace SMS
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(3, 234);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(424, 49);
+            this.panel3.Size = new System.Drawing.Size(456, 49);
             this.panel3.TabIndex = 0;
             // 
             // buttonNO
@@ -210,7 +237,7 @@ namespace SMS
             // 
             this.splitter1.Location = new System.Drawing.Point(453, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(10, 526);
+            this.splitter1.Size = new System.Drawing.Size(10, 551);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
@@ -221,7 +248,7 @@ namespace SMS
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(453, 526);
+            this.panel1.Size = new System.Drawing.Size(453, 551);
             this.panel1.TabIndex = 3;
             // 
             // dataGridViewTea
@@ -244,7 +271,7 @@ namespace SMS
             this.dataGridViewTea.RowHeadersWidth = 51;
             this.dataGridViewTea.RowTemplate.Height = 23;
             this.dataGridViewTea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewTea.Size = new System.Drawing.Size(453, 442);
+            this.dataGridViewTea.Size = new System.Drawing.Size(453, 467);
             this.dataGridViewTea.TabIndex = 2;
             this.dataGridViewTea.SelectionChanged += new System.EventHandler(this.dataGridViewTea_SelectionChanged);
             // 
@@ -362,38 +389,11 @@ namespace SMS
             this.label1.TabIndex = 0;
             this.label1.Text = "工号";
             // 
-            // CNO2
-            // 
-            this.CNO2.DataPropertyName = "CNO";
-            this.CNO2.HeaderText = "课程编号";
-            this.CNO2.MinimumWidth = 6;
-            this.CNO2.Name = "CNO2";
-            this.CNO2.ReadOnly = true;
-            this.CNO2.Width = 125;
-            // 
-            // CName2
-            // 
-            this.CName2.DataPropertyName = "CName";
-            this.CName2.HeaderText = "课程名称";
-            this.CName2.MinimumWidth = 6;
-            this.CName2.Name = "CName2";
-            this.CName2.ReadOnly = true;
-            this.CName2.Width = 125;
-            // 
-            // Credit2
-            // 
-            this.Credit2.DataPropertyName = "Credit";
-            this.Credit2.HeaderText = "学分";
-            this.Credit2.MinimumWidth = 6;
-            this.Credit2.Name = "Credit2";
-            this.Credit2.ReadOnly = true;
-            this.Credit2.Width = 125;
-            // 
             // FormTC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 526);
+            this.ClientSize = new System.Drawing.Size(925, 551);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel1);

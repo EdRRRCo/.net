@@ -202,5 +202,16 @@ namespace studentMS.BLL
         {
             return strUserRight.Contains("," + FID + ",");
         }
+
+
+        public bool CanDeleteTeacher(string TNO)
+        {
+            return dal.CanDeleteTeacher(TNO);
+        }
+
+        public bool DeleteTeacher(string TNO)
+        {
+            return dal.DeleteTeacher(TNO);
+        }
     }
 }

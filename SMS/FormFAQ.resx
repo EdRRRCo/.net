@@ -117,25 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TNO.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TSex.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Address.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Tel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Tstatus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="MenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>学生成绩管理系统
+1. 系统简介
+学生成绩管理系统是一款旨在帮助学校或教育机构管理学生成绩、课程信息以及学术记录的系统。系统支持管理员、教师和学生不同角色的使用权限，并提供强大的功能来处理学生成绩的录入、查询、修改及统计等任务。通过此系统，学校能够高效地管理学生信息，促进成绩透明化，提升管理效率。
+
+2. 系统功能
+学生信息管理：管理员可以添加、删除和修改学生的个人信息，查看学生的详细信息。
+课程管理：教师和管理员可以录入、修改、删除课程信息，查看学生课程安排。
+成绩管理：教师可以为学生输入成绩，学生可以查看个人成绩记录，管理员可以查看所有学生的成绩。
+成绩查询与统计：提供成绩的查询、统计分析功能，包括按学期、学科和成绩排名查询。
+3. 常见问题解答 (FAQ)
+Q: 如何登录学生成绩管理系统？ A: 使用个人账号（管理员、教师或学生角色）和密码进行登录。管理员和教师账号由系统管理员分配，学生账号由教师或管理员创建。
+
+Q: 我作为教师，如何录入学生成绩？ A: 登录教师账号后，进入成绩管理模块，选择相应课程并找到需要录入成绩的学生，输入成绩后保存即可。
+
+Q: 我作为学生，如何查看自己的成绩？ A: 登录学生账号后，进入成绩查询模块，系统会自动显示你所有课程的成绩信息。
+
+Q: 我忘记了密码，怎么办？ A: 如果你是管理员或教师，联系系统管理员重置密码。学生可以通过系统中的“忘记密码”功能进行重置。
+
+Q: 如何导出成绩报表？ A: 管理员和教师可以在成绩管理界面选择导出功能，成绩数据会以Excel或CSV格式保存，方便打印或进一步处理。
+
+Q: 系统是否支持成绩统计分析？ A: 是的，系统可以根据学期、课程和班级生成成绩统计报告，支持按成绩排名排序，帮助管理员和教师更好地分析学生表现。
+
+4. 系统支持与维护
+技术支持：如遇到任何技术问题或功能使用上的困惑，可以通过系统内的支持链接或邮件方式联系技术支持团队。
+系统更新：定期发布系统更新和版本，确保系统安全和功能的持续完善。</value>
+  </data>
 </root>

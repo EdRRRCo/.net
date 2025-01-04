@@ -31,6 +31,12 @@ namespace SMS
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelStuSer = new System.Windows.Forms.Panel();
             this.buttonQuery = new System.Windows.Forms.Button();
             this.textBoxTName = new System.Windows.Forms.TextBox();
@@ -41,12 +47,6 @@ namespace SMS
             this.MenuItemAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemDel = new System.Windows.Forms.ToolStripMenuItem();
-            this.TNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelStuSer.SuspendLayout();
             this.MenuStrip.SuspendLayout();
@@ -76,6 +76,60 @@ namespace SMS
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            // 
+            // TNO
+            // 
+            this.TNO.DataPropertyName = "TNO";
+            this.TNO.HeaderText = "工号";
+            this.TNO.MinimumWidth = 6;
+            this.TNO.Name = "TNO";
+            this.TNO.ReadOnly = true;
+            this.TNO.Width = 125;
+            // 
+            // TName
+            // 
+            this.TName.DataPropertyName = "TName";
+            this.TName.HeaderText = "姓名";
+            this.TName.MinimumWidth = 6;
+            this.TName.Name = "TName";
+            this.TName.ReadOnly = true;
+            this.TName.Width = 125;
+            // 
+            // TSex
+            // 
+            this.TSex.DataPropertyName = "TSex";
+            this.TSex.HeaderText = "性别";
+            this.TSex.MinimumWidth = 6;
+            this.TSex.Name = "TSex";
+            this.TSex.ReadOnly = true;
+            this.TSex.Width = 80;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "住址";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 220;
+            // 
+            // Tel
+            // 
+            this.Tel.DataPropertyName = "Tel";
+            this.Tel.HeaderText = "联系方式";
+            this.Tel.MinimumWidth = 6;
+            this.Tel.Name = "Tel";
+            this.Tel.ReadOnly = true;
+            this.Tel.Width = 180;
+            // 
+            // Tstatus
+            // 
+            this.Tstatus.DataPropertyName = "Tstatus";
+            this.Tstatus.HeaderText = "在职状态";
+            this.Tstatus.MinimumWidth = 6;
+            this.Tstatus.Name = "Tstatus";
+            this.Tstatus.ReadOnly = true;
+            this.Tstatus.Width = 125;
             // 
             // panelStuSer
             // 
@@ -146,17 +200,18 @@ namespace SMS
             this.MenuItemEdit,
             this.MenuItemDel});
             this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(109, 76);
+            this.MenuStrip.Size = new System.Drawing.Size(211, 104);
             // 
             // MenuItemAdd
             // 
             this.MenuItemAdd.Name = "MenuItemAdd";
-            this.MenuItemAdd.Size = new System.Drawing.Size(108, 24);
+            this.MenuItemAdd.Size = new System.Drawing.Size(210, 24);
             this.MenuItemAdd.Text = "新增";
             this.MenuItemAdd.Click += new System.EventHandler(this.MenuItemAdd_Click);
             // 
             // MenuItemEdit
             // 
+            this.MenuItemEdit.Enabled = false;
             this.MenuItemEdit.Name = "MenuItemEdit";
             this.MenuItemEdit.Size = new System.Drawing.Size(210, 24);
             this.MenuItemEdit.Text = "修改";
@@ -164,61 +219,11 @@ namespace SMS
             // 
             // MenuItemDel
             // 
+            this.MenuItemDel.Enabled = false;
             this.MenuItemDel.Name = "MenuItemDel";
             this.MenuItemDel.Size = new System.Drawing.Size(210, 24);
             this.MenuItemDel.Text = "删除";
             this.MenuItemDel.Click += new System.EventHandler(this.MenuItemDel_Click);
-            // 
-            // TNO
-            // 
-            this.TNO.DataPropertyName = "TNO";
-            this.TNO.HeaderText = "工号";
-            this.TNO.MinimumWidth = 6;
-            this.TNO.Name = "TNO";
-            this.TNO.ReadOnly = true;
-            // 
-            // TName
-            // 
-            this.TName.DataPropertyName = "TName";
-            this.TName.HeaderText = "姓名";
-            this.TName.MinimumWidth = 6;
-            this.TName.Name = "TName";
-            this.TName.ReadOnly = true;
-            // 
-            // TSex
-            // 
-            this.TSex.DataPropertyName = "TSex";
-            this.TSex.HeaderText = "性别";
-            this.TSex.MinimumWidth = 6;
-            this.TSex.Name = "TSex";
-            this.TSex.ReadOnly = true;
-            this.TSex.Width = 80;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "住址";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 220;
-            // 
-            // Tel
-            // 
-            this.Tel.DataPropertyName = "Tel";
-            this.Tel.HeaderText = "联系方式";
-            this.Tel.MinimumWidth = 6;
-            this.Tel.Name = "Tel";
-            this.Tel.ReadOnly = true;
-            this.Tel.Width = 180;
-            // 
-            // Tstatus
-            // 
-            this.Tstatus.DataPropertyName = "Tstatus";
-            this.Tstatus.HeaderText = "在职状态";
-            this.Tstatus.MinimumWidth = 6;
-            this.Tstatus.Name = "Tstatus";
-            this.Tstatus.ReadOnly = true;
             // 
             // FormTeacher
             // 

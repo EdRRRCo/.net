@@ -5,13 +5,13 @@ using MySql.Data.MySqlClient;
 using Maticsoft.DBUtility;
 namespace studentMS.DAL
 {
-	public class core
-	{
-		public core()
-		{}
+    public class core
+    {
+        public core()
+        { }
 
         /// <summary>
-        /// ����ѧ�ź�������ѯ������������ѧ����Ϣ�б�
+        /// 根据学号和姓名查询所满足条件的学生信息列表
         /// </summary>
         /// <param name="SNO"></param>
         /// <param name="SName"></param>
@@ -31,12 +31,12 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ���ݹ��ź�������ѯ���������ʦ��Ϣ�б�
+        /// 根据工号和姓名查询所满足的老师信息列表
         /// </summary>
         /// <param name="TNO"></param>
         /// <param name="TName"></param>
         /// <returns></returns>
-        public DataSet GetList_Teacher(string TNO,string TName)
+        public DataSet GetList_Teacher(string TNO, string TName)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select * from teacher ");
@@ -51,7 +51,7 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ���ݿγ̱�źͿγ����Ʋ�ѯ������Ŀγ���Ϣ�б�
+        /// 根据课程编号和课程名称查询所满足的课程信息列表
         /// </summary>
         /// <param name="CNO"></param>
         /// <param name="CName"></param>
@@ -71,7 +71,7 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ����ѧ��SNO��ȡѧ����ѡ�γ��б�
+        /// 根据学生SNO获取学生已选课程列表
         /// </summary>
         /// <param name="SNO"></param>
         /// <returns></returns>
@@ -85,9 +85,9 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ���ݽ�ʦ���Ż�ȡ��ʦ�ڿογ��б�
+        /// 根据教师工号获取教师授课课程列表
         /// </summary>
-        /// <param name="TNO">��ʦ����</param>
+        /// <param name="TNO">教师工号</param>
         /// <returns></returns>
         public DataSet GetList_TCSelected(string TNO)
         {
@@ -103,7 +103,7 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ����ѧ��SNO��ȡѧ����ѡ�γ��б�
+        /// 根据学生SNO获取学生未选课程列表
         /// </summary>
         /// <param name="SNO"></param>
         /// <returns></returns>
@@ -116,9 +116,8 @@ namespace studentMS.DAL
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
-        
         /// <summary>
-        /// ���ݽ�ʦ���Ż�ȡ��ѡ���ʦ���ڿογ�
+        /// 根据教师工号获取非选择教师的授课课程
         /// </summary>
         /// <param name="TNO"></param>
         /// <returns></returns>
@@ -136,9 +135,9 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ���ݿγ̱�Ż�ȡѡ�˸ÿγ̵�ѧ����ѧ�š������ͳɼ�
+        /// 根据课程编号获取选了该课程的学生的学号、姓名和成绩
         /// </summary>
-        /// <param name="CNO">�γ̱��</param>
+        /// <param name="CNO">课程编号</param>
         /// <returns>DataSet</returns>
         public DataSet GetList_Score(string CNO)
         {
@@ -150,20 +149,20 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ����ѧ�������γ�����ģ����ѯ���������ĳɼ���¼
+        /// 根据学号姓名课程名称模糊查询满足条件的成绩记录
         /// </summary>
-        /// <param name="SNO">ѧ��</param>
-        /// <param name="SName">����</param>
-        /// <param name="CName">�γ�����</param>
+        /// <param name="SNO">学号</param>
+        /// <param name="SName">姓名</param>
+        /// <param name="CName">课程名称</param>
         /// <returns></returns>
-        public DataSet GetList_Score2(string SNO,string SName,string CName)
+        public DataSet GetList_Score2(string SNO, string SName, string CName)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT a.SNO,b.SName,b.SSex,a.CNO,c.CName,a.Score ");
             strSql.Append(" from s_c a,student b,course c ");
             strSql.Append(" where a.SNO = b.SNO and a.CNO = c.CNO ");
 
-            if(!(SNO == null || SNO ==""))
+            if (!(SNO == null || SNO == ""))
                 strSql.Append(" and a.SNO like '%" + SNO + "%'");
             if (!(SName == null || SName == ""))
                 strSql.Append(" and b.SName like '%" + SName + "%'");
@@ -174,12 +173,12 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ����ѧԺ�����ѧԺ����ģ����ѯѧԺ��Ϣ
+        /// 根据学院代码和学院名称模糊查询学院信息
         /// </summary>
-        /// <param name="DeptNO">ѧԺ����</param>
-        /// <param name="DeptName">ѧԺ����</param>
+        /// <param name="DeptNO">学院代码</param>
+        /// <param name="DeptName">学院名称</param>
         /// <returns></returns>
-        public DataSet GetList_Dept(string DeptNO,string DeptName)
+        public DataSet GetList_Dept(string DeptNO, string DeptName)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT DeptNO,DeptName FROM student.department ");
@@ -194,9 +193,8 @@ namespace studentMS.DAL
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
-
         /// <summary>
-        /// ���ݿγ����ƻ�ȡѧ���ɼ����
+        /// 根据课程名称获取学生成绩情况
         /// </summary>
         /// <param name="CName"></param>
         /// <returns></returns>
@@ -211,35 +209,35 @@ namespace studentMS.DAL
                 strSql.Append(" where a.CNO in(select CNO from course where CName like '%" + CName + "%')");
             strSql.Append(" group by a.SNO,b.SName,b.SSex; ");
 
-
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
         /// <summary>
-        /// ���ݿγ����ƻ�ȡ�γ̵ĳɼ����
+        /// 根据课程名称获取课程的成绩情况
         /// </summary>
         /// <param name="CName"></param>
         /// <returns></returns>
         public DataSet GetList_ScoreCourseSta(string CName)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT a.CNO,b.CName, ");
-            strSql.Append(" Max(Score) as ScoreMax,Min(Score) as ScoreMin, avg(Score) as ScoreAvg ");
-            strSql.Append(" FROM student.s_c a");
-            strSql.Append(" JOIN student b ON a.SNO = b.SNO ");
+            strSql.Append("SELECT a.CNO, c.CName, ");
+            strSql.Append(" MAX(Score) AS ScoreMax, MIN(Score) AS ScoreMin, AVG(Score) AS ScoreAvg ");
+            strSql.Append(" FROM student.s_c a ");
+            strSql.Append(" JOIN course c ON a.CNO = c.CNO ");  
+            strSql.Append(" JOIN student s ON a.SNO = s.SNO "); 
 
-            if (!(CName != null || CName == ""))
+
+            if (!string.IsNullOrEmpty(CName))
                 strSql.Append(" where a.CNO in(select CNO from course where CName like '%" + CName + "%')");
-            strSql.Append(" group by a.SNO,b.SName,b.SSex; ");
-
+            strSql.Append(" GROUP BY a.CNO, c.CName; ");
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
         /// <summary>
-        /// ����RoleID��ȡ��ǰϵͳ����Ȩ���Լ��ý�ɫ��ӵ�е�Ȩ��
+        /// 根据RoleID获取当前系统所有权限以及该角色以拥有的权限
         /// </summary>
-        /// <param name="RoleID">��ɫID</param>
+        /// <param name="RoleID">角色ID</param>
         /// <returns></returns>
         public DataSet GetList_RoleRight(string RoleID)
         {
@@ -249,33 +247,31 @@ namespace studentMS.DAL
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
-            
 
         /// <summary>
-        /// ����uidģ����ѯ�������������ݼ�
+        /// 根据uid模糊查询符合条件的数据集
         /// </summary>
-        /// <param name="UID">�û���</param>
+        /// <param name="UID">用户名</param>
         /// <returns></returns>
         public DataSet GetList_User(string UID)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT a.UID,a.RoleID,a.UPriorTime,a.UPriorIP,a.Remark,b.RoleName ");
-            strSql.Append(" FROM b_user a,b_role b where a.RoleID=b.RoleID " );
+            strSql.Append(" FROM b_user a,b_role b where a.RoleID=b.RoleID ");
 
-            if(UID != "")
+            if (UID != "")
             {
-                strSql.Append(" and UID like '%" + UID +"%'");
+                strSql.Append(" and UID like '%" + UID + "%'");
             }
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
-
         /// <summary>
-        /// �����û����������ѯ���û��Ƿ����
+        /// 根据用户名和密码查询该用户是否存在
         /// </summary>
-        /// <param name="UID">�û���</param>
-        /// <param name="UCode">����</param>
+        /// <param name="UID">用户名</param>
+        /// <param name="UCode">密码</param>
         /// <returns></returns>
         public bool ExistUIDUCode(string UID, string UCode)
         {
@@ -290,7 +286,7 @@ namespace studentMS.DAL
         }
 
         /// <summary>
-        /// ��ȡ�û�user��Ȩ���б�
+        /// 获取用户user的权限列表
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
@@ -298,25 +294,45 @@ namespace studentMS.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT FID from b_roleright ");
-            strSql.Append(" where RoleID in (select RoleID from b_user where UID ='"+ user +"')");
+            strSql.Append(" where RoleID in (select RoleID from b_user where UID ='" + user + "')");
 
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
-        public bool SelectCourse(string TNO, string CNO)
+        /// <summary>
+        /// 删除教师档案确认是否存在未退选的授课信息
+        /// </summary>
+        /// <param name="TNO"></param>
+        /// <returns></returns>
+        public bool CanDeleteTeacher(string TNO)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("INSERT INTO t_c (TNO, CNO) VALUES (@TNO, @CNO)");
+            strSql.Append("SELECT COUNT(*) FROM t_c WHERE TNO = @TNO");
             MySqlParameter[] parameters = {
-                new MySqlParameter("@TNO", MySqlDbType.VarChar),
-                new MySqlParameter("@CNO", MySqlDbType.VarChar)
+                new MySqlParameter("@TNO", MySqlDbType.VarChar)
             };
             parameters[0].Value = TNO;
-            parameters[1].Value = CNO;
+
+            object result = DbHelperMySQL.GetSingle(strSql.ToString(), parameters);
+            return Convert.ToInt32(result) == 0;
+        }
+
+        /// <summary>
+        /// 删除教师档案
+        /// </summary>
+        /// <param name="TNO"></param>
+        /// <returns></returns>
+        public bool DeleteTeacher(string TNO)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("DELETE FROM teacher WHERE TNO = @TNO");
+            MySqlParameter[] parameters = {
+                new MySqlParameter("@TNO", MySqlDbType.VarChar)
+            };
+            parameters[0].Value = TNO;
 
             int rows = DbHelperMySQL.ExecuteSql(strSql.ToString(), parameters);
             return rows > 0;
         }
-
     }
 }

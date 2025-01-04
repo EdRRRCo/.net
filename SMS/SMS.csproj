@@ -70,6 +70,12 @@
     <Compile Include="FormDeptEdit.Designer.cs">
       <DependentUpon>FormDeptEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFAQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFAQ.Designer.cs">
+      <DependentUpon>FormFAQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInputScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     <Compile Include="FormTeacherEdit.Designer.cs">
       <DependentUpon>FormTeacherEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTutorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTutorial.Designer.cs">
+      <DependentUpon>FormTutorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDeptEdit.resx">
       <DependentUpon>FormDeptEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFAQ.resx">
+      <DependentUpon>FormFAQ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInputScore.resx">
       <DependentUpon>FormInputScore.cs</DependentUpon>
@@ -221,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTeacherEdit.resx">
       <DependentUpon>FormTeacherEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTutorial.resx">
+      <DependentUpon>FormTutorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>

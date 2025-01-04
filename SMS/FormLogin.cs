@@ -63,7 +63,7 @@ namespace SMS
 
             this.CreateVerifyCode();//调用生成验证码的方法
 
-            this.textBoxVerify.Text = VerifyCode;
+            //this.textBoxVerify.Text = VerifyCode;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

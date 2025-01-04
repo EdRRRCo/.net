@@ -56,13 +56,21 @@ namespace SMS
             if (MessageBox.Show(this, "您确定要删除您所选中的记录吗？\n", "删除确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 //从数据库中删除记录
-                studentMS.BLL.teacher bll = new studentMS.BLL.teacher();//实例化BLL层中的student类
+                studentMS.BLL.core bll = new studentMS.BLL.core();//实例化BLL层中的core类
 
-                //获取dataGridViewStu中选中的学号sno
+                //获取dataGridView1中选中的工号tno
                 string tno = this.dataGridView1.SelectedRows[0].Cells["TNO"].Value.ToString();
+
+                // 检查是否可以删除
+                if (!bll.CanDeleteTeacher(tno))
+                {
+                    MessageBox.Show(this, "该教师存在相关授课记录，无法删除！", "删除失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 try
                 {
-                    bll.Delete(tno);//物理删除
+                    bll.DeleteTeacher(tno);//物理删除
                     MessageBox.Show(this, "删除成功！\n", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.buttonQuery_Click(this.buttonQuery, e);//调用查询功能实现刷新数据显示
                 }
@@ -98,7 +106,7 @@ namespace SMS
         {
             studentMS.BLL.core core = new studentMS.BLL.core();//实例化BLL层
 
-            //判断当前登录用户是否拥有学生档案（增删改）的三项权限
+            //判断当前登录用户是否拥有教师档案（增删改）的三项权限
             rightAdd = core.haveRight("2301");
             rightDelete = core.haveRight("2303");
             rightEdit = core.haveRight("2302");
@@ -134,7 +142,7 @@ namespace SMS
 
             if (temp.DialogResult == DialogResult.OK)
             {
-                MessageBox.Show(this, "修改学生档案信息成功！\n", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "修改教师档案信息成功！\n", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.buttonQuery_Click(this.buttonQuery, e);//调用查询按钮的单击事件来刷新数据显示
                 this.DataGridViewRelocation(this.dataGridView1, "TNO", tno);//数据刷新后选中项重新定位
                 return;
